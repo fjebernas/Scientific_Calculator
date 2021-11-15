@@ -115,6 +115,8 @@ namespace Scientific_Calculator
             // 
             // menuBar
             // 
+            this.menuBar.BackColor = System.Drawing.Color.DarkGray;
+            this.menuBar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewToolStripMenuItem,
@@ -122,7 +124,7 @@ namespace Scientific_Calculator
             this.helpToolStripMenuItem});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
-            this.menuBar.Size = new System.Drawing.Size(819, 30);
+            this.menuBar.Size = new System.Drawing.Size(819, 33);
             this.menuBar.TabIndex = 0;
             this.menuBar.Text = "menu strip";
             // 
@@ -134,31 +136,31 @@ namespace Scientific_Calculator
             this.programmerToolStripMenuItem,
             this.statisticsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(67, 29);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // standardToolStripMenuItem
             // 
             this.standardToolStripMenuItem.Name = "standardToolStripMenuItem";
-            this.standardToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.standardToolStripMenuItem.Size = new System.Drawing.Size(204, 30);
             this.standardToolStripMenuItem.Text = "Standard";
             // 
             // scientificToolStripMenuItem
             // 
             this.scientificToolStripMenuItem.Name = "scientificToolStripMenuItem";
-            this.scientificToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.scientificToolStripMenuItem.Size = new System.Drawing.Size(204, 30);
             this.scientificToolStripMenuItem.Text = "Scientific";
             // 
             // programmerToolStripMenuItem
             // 
             this.programmerToolStripMenuItem.Name = "programmerToolStripMenuItem";
-            this.programmerToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.programmerToolStripMenuItem.Size = new System.Drawing.Size(204, 30);
             this.programmerToolStripMenuItem.Text = "Programmer";
             // 
             // statisticsToolStripMenuItem
             // 
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(204, 30);
             this.statisticsToolStripMenuItem.Text = "Statistics";
             // 
             // editToolStripMenuItem
@@ -168,25 +170,25 @@ namespace Scientific_Calculator
             this.pasteToolStripMenuItem,
             this.historyToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 29);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
             this.copyToolStripMenuItem.Text = "Copy";
             // 
             // pasteToolStripMenuItem
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
             this.pasteToolStripMenuItem.Text = "Paste";
             // 
             // historyToolStripMenuItem
             // 
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
             this.historyToolStripMenuItem.Text = "History";
             // 
             // helpToolStripMenuItem
@@ -194,18 +196,19 @@ namespace Scientific_Calculator
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(149, 30);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 33);
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.Location = new System.Drawing.Point(12, 44);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(794, 61);
@@ -213,6 +216,7 @@ namespace Scientific_Calculator
             // 
             // btnMS
             // 
+            this.btnMS.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMS.Location = new System.Drawing.Point(572, 114);
             this.btnMS.Name = "btnMS";
             this.btnMS.Size = new System.Drawing.Size(74, 52);
@@ -222,6 +226,7 @@ namespace Scientific_Calculator
             // 
             // btnMadd
             // 
+            this.btnMadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMadd.Location = new System.Drawing.Point(652, 114);
             this.btnMadd.Name = "btnMadd";
             this.btnMadd.Size = new System.Drawing.Size(74, 52);
@@ -231,6 +236,7 @@ namespace Scientific_Calculator
             // 
             // btnMsub
             // 
+            this.btnMsub.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMsub.Location = new System.Drawing.Point(732, 114);
             this.btnMsub.Name = "btnMsub";
             this.btnMsub.Size = new System.Drawing.Size(74, 52);
@@ -240,6 +246,7 @@ namespace Scientific_Calculator
             // 
             // btnC
             // 
+            this.btnC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC.Location = new System.Drawing.Point(572, 172);
             this.btnC.Name = "btnC";
             this.btnC.Size = new System.Drawing.Size(74, 52);
@@ -249,6 +256,7 @@ namespace Scientific_Calculator
             // 
             // btnSign
             // 
+            this.btnSign.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSign.Location = new System.Drawing.Point(652, 172);
             this.btnSign.Name = "btnSign";
             this.btnSign.Size = new System.Drawing.Size(74, 52);
@@ -258,6 +266,7 @@ namespace Scientific_Calculator
             // 
             // btnRadical
             // 
+            this.btnRadical.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRadical.Location = new System.Drawing.Point(732, 172);
             this.btnRadical.Name = "btnRadical";
             this.btnRadical.Size = new System.Drawing.Size(74, 52);
@@ -267,6 +276,7 @@ namespace Scientific_Calculator
             // 
             // btn9
             // 
+            this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.Location = new System.Drawing.Point(572, 230);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(74, 52);
@@ -276,6 +286,7 @@ namespace Scientific_Calculator
             // 
             // btnDivide
             // 
+            this.btnDivide.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDivide.Location = new System.Drawing.Point(652, 230);
             this.btnDivide.Name = "btnDivide";
             this.btnDivide.Size = new System.Drawing.Size(74, 52);
@@ -285,6 +296,7 @@ namespace Scientific_Calculator
             // 
             // btnPercentage
             // 
+            this.btnPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPercentage.Location = new System.Drawing.Point(732, 230);
             this.btnPercentage.Name = "btnPercentage";
             this.btnPercentage.Size = new System.Drawing.Size(74, 52);
@@ -321,6 +333,7 @@ namespace Scientific_Calculator
             // 
             // btn6
             // 
+            this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.Location = new System.Drawing.Point(572, 288);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(74, 52);
@@ -330,6 +343,7 @@ namespace Scientific_Calculator
             // 
             // btnTimes
             // 
+            this.btnTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimes.Location = new System.Drawing.Point(652, 288);
             this.btnTimes.Name = "btnTimes";
             this.btnTimes.Size = new System.Drawing.Size(74, 52);
@@ -339,15 +353,17 @@ namespace Scientific_Calculator
             // 
             // btnOneOverX
             // 
+            this.btnOneOverX.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOneOverX.Location = new System.Drawing.Point(732, 288);
             this.btnOneOverX.Name = "btnOneOverX";
             this.btnOneOverX.Size = new System.Drawing.Size(74, 52);
             this.btnOneOverX.TabIndex = 2;
-            this.btnOneOverX.Text = "1/x";
+            this.btnOneOverX.Text = "1/𝑥";
             this.btnOneOverX.UseVisualStyleBackColor = true;
             // 
             // btnEquals
             // 
+            this.btnEquals.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEquals.Location = new System.Drawing.Point(732, 346);
             this.btnEquals.Name = "btnEquals";
             this.btnEquals.Size = new System.Drawing.Size(74, 110);
@@ -366,6 +382,7 @@ namespace Scientific_Calculator
             // 
             // btn3
             // 
+            this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.Location = new System.Drawing.Point(572, 346);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(74, 52);
@@ -384,6 +401,7 @@ namespace Scientific_Calculator
             // 
             // btnMinus
             // 
+            this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinus.Location = new System.Drawing.Point(652, 346);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(74, 52);
@@ -402,6 +420,7 @@ namespace Scientific_Calculator
             // 
             // btnDecimalPoint
             // 
+            this.btnDecimalPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecimalPoint.Location = new System.Drawing.Point(572, 404);
             this.btnDecimalPoint.Name = "btnDecimalPoint";
             this.btnDecimalPoint.Size = new System.Drawing.Size(74, 52);
@@ -420,6 +439,7 @@ namespace Scientific_Calculator
             // 
             // btnPlus
             // 
+            this.btnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlus.Location = new System.Drawing.Point(652, 404);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(74, 52);
@@ -429,6 +449,7 @@ namespace Scientific_Calculator
             // 
             // btnMR
             // 
+            this.btnMR.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMR.Location = new System.Drawing.Point(492, 114);
             this.btnMR.Name = "btnMR";
             this.btnMR.Size = new System.Drawing.Size(74, 52);
@@ -438,6 +459,7 @@ namespace Scientific_Calculator
             // 
             // btnCE
             // 
+            this.btnCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCE.Location = new System.Drawing.Point(492, 172);
             this.btnCE.Name = "btnCE";
             this.btnCE.Size = new System.Drawing.Size(74, 52);
@@ -447,6 +469,7 @@ namespace Scientific_Calculator
             // 
             // btn8
             // 
+            this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.Location = new System.Drawing.Point(492, 230);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(74, 52);
@@ -474,6 +497,7 @@ namespace Scientific_Calculator
             // 
             // btn5
             // 
+            this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.Location = new System.Drawing.Point(492, 288);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(74, 52);
@@ -492,6 +516,7 @@ namespace Scientific_Calculator
             // 
             // btn2
             // 
+            this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.Location = new System.Drawing.Point(492, 346);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(74, 52);
@@ -501,6 +526,7 @@ namespace Scientific_Calculator
             // 
             // btn0
             // 
+            this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.Location = new System.Drawing.Point(412, 404);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(154, 52);
@@ -510,6 +536,7 @@ namespace Scientific_Calculator
             // 
             // btnMC
             // 
+            this.btnMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMC.Location = new System.Drawing.Point(412, 114);
             this.btnMC.Name = "btnMC";
             this.btnMC.Size = new System.Drawing.Size(74, 52);
@@ -519,6 +546,7 @@ namespace Scientific_Calculator
             // 
             // btnBackspace
             // 
+            this.btnBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackspace.Location = new System.Drawing.Point(412, 172);
             this.btnBackspace.Name = "btnBackspace";
             this.btnBackspace.Size = new System.Drawing.Size(74, 52);
@@ -528,6 +556,7 @@ namespace Scientific_Calculator
             // 
             // btn7
             // 
+            this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.Location = new System.Drawing.Point(412, 230);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(74, 52);
@@ -555,6 +584,7 @@ namespace Scientific_Calculator
             // 
             // btn4
             // 
+            this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.Location = new System.Drawing.Point(412, 288);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(74, 52);
@@ -564,6 +594,7 @@ namespace Scientific_Calculator
             // 
             // btn1
             // 
+            this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.Location = new System.Drawing.Point(412, 346);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(74, 52);
@@ -573,6 +604,7 @@ namespace Scientific_Calculator
             // 
             // btnLeftParen
             // 
+            this.btnLeftParen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeftParen.Location = new System.Drawing.Point(252, 172);
             this.btnLeftParen.Name = "btnLeftParen";
             this.btnLeftParen.Size = new System.Drawing.Size(74, 52);
@@ -582,6 +614,7 @@ namespace Scientific_Calculator
             // 
             // btnRightParen
             // 
+            this.btnRightParen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRightParen.Location = new System.Drawing.Point(332, 172);
             this.btnRightParen.Name = "btnRightParen";
             this.btnRightParen.Size = new System.Drawing.Size(74, 52);
@@ -591,6 +624,7 @@ namespace Scientific_Calculator
             // 
             // btnLn
             // 
+            this.btnLn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLn.Location = new System.Drawing.Point(172, 172);
             this.btnLn.Name = "btnLn";
             this.btnLn.Size = new System.Drawing.Size(74, 52);
@@ -600,6 +634,7 @@ namespace Scientific_Calculator
             // 
             // btnInv
             // 
+            this.btnInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInv.Location = new System.Drawing.Point(92, 172);
             this.btnInv.Name = "btnInv";
             this.btnInv.Size = new System.Drawing.Size(74, 52);
@@ -609,15 +644,17 @@ namespace Scientific_Calculator
             // 
             // btnSquared
             // 
+            this.btnSquared.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSquared.Location = new System.Drawing.Point(252, 230);
             this.btnSquared.Name = "btnSquared";
             this.btnSquared.Size = new System.Drawing.Size(74, 52);
             this.btnSquared.TabIndex = 2;
-            this.btnSquared.Text = "x^2";
+            this.btnSquared.Text = "𝑥²";
             this.btnSquared.UseVisualStyleBackColor = true;
             // 
             // btnFactorial
             // 
+            this.btnFactorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFactorial.Location = new System.Drawing.Point(332, 230);
             this.btnFactorial.Name = "btnFactorial";
             this.btnFactorial.Size = new System.Drawing.Size(74, 52);
@@ -627,6 +664,7 @@ namespace Scientific_Calculator
             // 
             // btnSin
             // 
+            this.btnSin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSin.Location = new System.Drawing.Point(172, 230);
             this.btnSin.Name = "btnSin";
             this.btnSin.Size = new System.Drawing.Size(74, 52);
@@ -636,6 +674,7 @@ namespace Scientific_Calculator
             // 
             // buttonSinh
             // 
+            this.buttonSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSinh.Location = new System.Drawing.Point(92, 230);
             this.buttonSinh.Name = "buttonSinh";
             this.buttonSinh.Size = new System.Drawing.Size(74, 52);
@@ -645,15 +684,17 @@ namespace Scientific_Calculator
             // 
             // btnExpToY
             // 
+            this.btnExpToY.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExpToY.Location = new System.Drawing.Point(252, 288);
             this.btnExpToY.Name = "btnExpToY";
             this.btnExpToY.Size = new System.Drawing.Size(74, 52);
             this.btnExpToY.TabIndex = 2;
-            this.btnExpToY.Text = "x^y";
+            this.btnExpToY.Text = "𝑥ʸ";
             this.btnExpToY.UseVisualStyleBackColor = true;
             // 
             // wip1
             // 
+            this.wip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wip1.Location = new System.Drawing.Point(332, 288);
             this.wip1.Name = "wip1";
             this.wip1.Size = new System.Drawing.Size(74, 52);
@@ -663,6 +704,7 @@ namespace Scientific_Calculator
             // 
             // btnCos
             // 
+            this.btnCos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCos.Location = new System.Drawing.Point(172, 288);
             this.btnCos.Name = "btnCos";
             this.btnCos.Size = new System.Drawing.Size(74, 52);
@@ -672,6 +714,7 @@ namespace Scientific_Calculator
             // 
             // btnCosh
             // 
+            this.btnCosh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCosh.Location = new System.Drawing.Point(92, 288);
             this.btnCosh.Name = "btnCosh";
             this.btnCosh.Size = new System.Drawing.Size(74, 52);
@@ -681,15 +724,17 @@ namespace Scientific_Calculator
             // 
             // btnCubed
             // 
+            this.btnCubed.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCubed.Location = new System.Drawing.Point(252, 346);
             this.btnCubed.Name = "btnCubed";
             this.btnCubed.Size = new System.Drawing.Size(74, 52);
             this.btnCubed.TabIndex = 2;
-            this.btnCubed.Text = "x^3";
+            this.btnCubed.Text = "𝑥³";
             this.btnCubed.UseVisualStyleBackColor = true;
             // 
             // wip2
             // 
+            this.wip2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wip2.Location = new System.Drawing.Point(332, 346);
             this.wip2.Name = "wip2";
             this.wip2.Size = new System.Drawing.Size(74, 52);
@@ -699,6 +744,7 @@ namespace Scientific_Calculator
             // 
             // btnTan
             // 
+            this.btnTan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTan.Location = new System.Drawing.Point(172, 346);
             this.btnTan.Name = "btnTan";
             this.btnTan.Size = new System.Drawing.Size(74, 52);
@@ -708,6 +754,7 @@ namespace Scientific_Calculator
             // 
             // btnTanh
             // 
+            this.btnTanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTanh.Location = new System.Drawing.Point(92, 346);
             this.btnTanh.Name = "btnTanh";
             this.btnTanh.Size = new System.Drawing.Size(74, 52);
@@ -717,6 +764,7 @@ namespace Scientific_Calculator
             // 
             // btnLog
             // 
+            this.btnLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLog.Location = new System.Drawing.Point(252, 406);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(74, 52);
@@ -726,15 +774,17 @@ namespace Scientific_Calculator
             // 
             // btnTenRaisedToX
             // 
+            this.btnTenRaisedToX.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTenRaisedToX.Location = new System.Drawing.Point(332, 406);
             this.btnTenRaisedToX.Name = "btnTenRaisedToX";
             this.btnTenRaisedToX.Size = new System.Drawing.Size(74, 52);
             this.btnTenRaisedToX.TabIndex = 2;
-            this.btnTenRaisedToX.Text = "10^x";
+            this.btnTenRaisedToX.Text = "10ˣ";
             this.btnTenRaisedToX.UseVisualStyleBackColor = true;
             // 
             // btnMod
             // 
+            this.btnMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMod.Location = new System.Drawing.Point(172, 406);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(74, 52);
@@ -744,6 +794,7 @@ namespace Scientific_Calculator
             // 
             // btnExp
             // 
+            this.btnExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExp.Location = new System.Drawing.Point(92, 406);
             this.btnExp.Name = "btnExp";
             this.btnExp.Size = new System.Drawing.Size(74, 52);
@@ -754,9 +805,11 @@ namespace Scientific_Calculator
             // radioDegrees
             // 
             this.radioDegrees.AutoSize = true;
+            this.radioDegrees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioDegrees.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.radioDegrees.Location = new System.Drawing.Point(41, 127);
             this.radioDegrees.Name = "radioDegrees";
-            this.radioDegrees.Size = new System.Drawing.Size(83, 21);
+            this.radioDegrees.Size = new System.Drawing.Size(107, 29);
             this.radioDegrees.TabIndex = 3;
             this.radioDegrees.TabStop = true;
             this.radioDegrees.Text = "Degrees";
@@ -765,9 +818,11 @@ namespace Scientific_Calculator
             // radioRadians
             // 
             this.radioRadians.AutoSize = true;
+            this.radioRadians.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioRadians.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.radioRadians.Location = new System.Drawing.Point(172, 127);
             this.radioRadians.Name = "radioRadians";
-            this.radioRadians.Size = new System.Drawing.Size(81, 21);
+            this.radioRadians.Size = new System.Drawing.Size(104, 29);
             this.radioRadians.TabIndex = 3;
             this.radioRadians.TabStop = true;
             this.radioRadians.Text = "Radians";
@@ -776,9 +831,11 @@ namespace Scientific_Calculator
             // radioGrads
             // 
             this.radioGrads.AutoSize = true;
+            this.radioGrads.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioGrads.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.radioGrads.Location = new System.Drawing.Point(296, 127);
             this.radioGrads.Name = "radioGrads";
-            this.radioGrads.Size = new System.Drawing.Size(68, 21);
+            this.radioGrads.Size = new System.Drawing.Size(86, 29);
             this.radioGrads.TabIndex = 3;
             this.radioGrads.TabStop = true;
             this.radioGrads.Text = "Grads";
@@ -786,6 +843,7 @@ namespace Scientific_Calculator
             // 
             // dummyButton
             // 
+            this.dummyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dummyButton.Location = new System.Drawing.Point(12, 170);
             this.dummyButton.Name = "dummyButton";
             this.dummyButton.Size = new System.Drawing.Size(74, 52);
@@ -794,6 +852,7 @@ namespace Scientific_Calculator
             // 
             // btnInt
             // 
+            this.btnInt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInt.Location = new System.Drawing.Point(12, 228);
             this.btnInt.Name = "btnInt";
             this.btnInt.Size = new System.Drawing.Size(74, 52);
@@ -803,6 +862,7 @@ namespace Scientific_Calculator
             // 
             // btnDMS
             // 
+            this.btnDMS.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDMS.Location = new System.Drawing.Point(12, 286);
             this.btnDMS.Name = "btnDMS";
             this.btnDMS.Size = new System.Drawing.Size(74, 52);
@@ -812,6 +872,7 @@ namespace Scientific_Calculator
             // 
             // btnPi
             // 
+            this.btnPi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPi.Location = new System.Drawing.Point(12, 344);
             this.btnPi.Name = "btnPi";
             this.btnPi.Size = new System.Drawing.Size(74, 52);
@@ -821,6 +882,7 @@ namespace Scientific_Calculator
             // 
             // btnFE
             // 
+            this.btnFE.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFE.Location = new System.Drawing.Point(12, 404);
             this.btnFE.Name = "btnFE";
             this.btnFE.Size = new System.Drawing.Size(74, 52);
@@ -832,6 +894,7 @@ namespace Scientific_Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(819, 468);
             this.Controls.Add(this.radioGrads);
             this.Controls.Add(this.radioRadians);
