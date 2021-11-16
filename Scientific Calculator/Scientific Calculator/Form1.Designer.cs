@@ -286,6 +286,7 @@ namespace Scientific_Calculator
             this.btn9.TabIndex = 2;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
             // btnDivide
             // 
@@ -343,6 +344,7 @@ namespace Scientific_Calculator
             this.btn6.TabIndex = 2;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
             // btnTimes
             // 
@@ -392,6 +394,7 @@ namespace Scientific_Calculator
             this.btn3.TabIndex = 2;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // button19
             // 
@@ -469,6 +472,7 @@ namespace Scientific_Calculator
             this.btnCE.TabIndex = 2;
             this.btnCE.Text = "CE";
             this.btnCE.UseVisualStyleBackColor = true;
+            this.btnCE.Click += new System.EventHandler(this.btnCE_Click);
             // 
             // btn8
             // 
@@ -479,6 +483,7 @@ namespace Scientific_Calculator
             this.btn8.TabIndex = 2;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
             // 
             // button28
             // 
@@ -507,6 +512,7 @@ namespace Scientific_Calculator
             this.btn5.TabIndex = 2;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
             // button31
             // 
@@ -526,6 +532,7 @@ namespace Scientific_Calculator
             this.btn2.TabIndex = 2;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn0
             // 
@@ -536,6 +543,7 @@ namespace Scientific_Calculator
             this.btn0.TabIndex = 2;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
             // btnMC
             // 
@@ -566,6 +574,7 @@ namespace Scientific_Calculator
             this.btn7.TabIndex = 2;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
             // button37
             // 
@@ -594,6 +603,7 @@ namespace Scientific_Calculator
             this.btn4.TabIndex = 2;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // btn1
             // 
