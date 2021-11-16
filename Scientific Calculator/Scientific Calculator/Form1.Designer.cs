@@ -368,13 +368,14 @@ namespace Scientific_Calculator
             // 
             // btnEquals
             // 
+            this.btnEquals.BackColor = System.Drawing.Color.DarkGray;
             this.btnEquals.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEquals.Location = new System.Drawing.Point(732, 346);
             this.btnEquals.Name = "btnEquals";
             this.btnEquals.Size = new System.Drawing.Size(74, 110);
             this.btnEquals.TabIndex = 2;
             this.btnEquals.Text = "=";
-            this.btnEquals.UseVisualStyleBackColor = true;
+            this.btnEquals.UseVisualStyleBackColor = false;
             // 
             // button17
             // 
@@ -564,6 +565,7 @@ namespace Scientific_Calculator
             this.btnBackspace.TabIndex = 2;
             this.btnBackspace.Text = "←";
             this.btnBackspace.UseVisualStyleBackColor = true;
+            this.btnBackspace.Click += new System.EventHandler(this.btnBackspace_Click);
             // 
             // btn7
             // 

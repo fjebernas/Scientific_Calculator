@@ -92,5 +92,16 @@ namespace Scientific_Calculator
         {
             displayTxtBox.Text = "0";
         }
+
+        private void btnBackspace_Click(object sender, EventArgs e)
+        {
+            if (displayTxtBox.Text.Length > 1)
+            {
+                displayTxtBox.Text = displayTxtBox.Text.Substring(0, displayTxtBox.Text.Length - 1);
+            } else if (displayTxtBox.Text.Length == 1)
+            {
+                displayTxtBox.Text = "0";
+            }
+        }
     }
 }
