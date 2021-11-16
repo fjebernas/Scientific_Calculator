@@ -16,5 +16,23 @@ namespace Scientific_Calculator
         {
             InitializeComponent();
         }
+
+        private void sciCal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            if (displayTxtBox.Text == "0")
+            ClearScreen();
+
+            displayTxtBox.Text = displayTxtBox.Text + "1";
+        }
+
+        private void ClearScreen()
+        {
+            displayTxtBox.Text = "";
+        }
     }
 }

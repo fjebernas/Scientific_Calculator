@@ -41,7 +41,7 @@ namespace Scientific_Calculator
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.displayTxtBox = new System.Windows.Forms.TextBox();
             this.btnMS = new System.Windows.Forms.Button();
             this.btnMadd = new System.Windows.Forms.Button();
             this.btnMsub = new System.Windows.Forms.Button();
@@ -205,14 +205,17 @@ namespace Scientific_Calculator
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(149, 30);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // textBox1
+            // displayTxtBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(12, 44);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(794, 61);
-            this.textBox1.TabIndex = 1;
+            this.displayTxtBox.BackColor = System.Drawing.SystemColors.Control;
+            this.displayTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayTxtBox.Location = new System.Drawing.Point(12, 44);
+            this.displayTxtBox.Multiline = true;
+            this.displayTxtBox.Name = "displayTxtBox";
+            this.displayTxtBox.Size = new System.Drawing.Size(794, 61);
+            this.displayTxtBox.TabIndex = 1;
+            this.displayTxtBox.Text = "0";
+            this.displayTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnMS
             // 
@@ -601,6 +604,7 @@ namespace Scientific_Calculator
             this.btn1.TabIndex = 2;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // btnLeftParen
             // 
@@ -674,7 +678,7 @@ namespace Scientific_Calculator
             // 
             // buttonSinh
             // 
-            this.buttonSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSinh.Location = new System.Drawing.Point(92, 230);
             this.buttonSinh.Name = "buttonSinh";
             this.buttonSinh.Size = new System.Drawing.Size(74, 52);
@@ -714,7 +718,7 @@ namespace Scientific_Calculator
             // 
             // btnCosh
             // 
-            this.btnCosh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCosh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCosh.Location = new System.Drawing.Point(92, 288);
             this.btnCosh.Name = "btnCosh";
             this.btnCosh.Size = new System.Drawing.Size(74, 52);
@@ -754,7 +758,7 @@ namespace Scientific_Calculator
             // 
             // btnTanh
             // 
-            this.btnTanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTanh.Location = new System.Drawing.Point(92, 346);
             this.btnTanh.Name = "btnTanh";
             this.btnTanh.Size = new System.Drawing.Size(74, 52);
@@ -844,7 +848,7 @@ namespace Scientific_Calculator
             // dummyButton
             // 
             this.dummyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dummyButton.Location = new System.Drawing.Point(12, 170);
+            this.dummyButton.Location = new System.Drawing.Point(12, 172);
             this.dummyButton.Name = "dummyButton";
             this.dummyButton.Size = new System.Drawing.Size(74, 52);
             this.dummyButton.TabIndex = 2;
@@ -853,7 +857,7 @@ namespace Scientific_Calculator
             // btnInt
             // 
             this.btnInt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInt.Location = new System.Drawing.Point(12, 228);
+            this.btnInt.Location = new System.Drawing.Point(12, 230);
             this.btnInt.Name = "btnInt";
             this.btnInt.Size = new System.Drawing.Size(74, 52);
             this.btnInt.TabIndex = 2;
@@ -863,7 +867,7 @@ namespace Scientific_Calculator
             // btnDMS
             // 
             this.btnDMS.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDMS.Location = new System.Drawing.Point(12, 286);
+            this.btnDMS.Location = new System.Drawing.Point(12, 288);
             this.btnDMS.Name = "btnDMS";
             this.btnDMS.Size = new System.Drawing.Size(74, 52);
             this.btnDMS.TabIndex = 2;
@@ -873,7 +877,7 @@ namespace Scientific_Calculator
             // btnPi
             // 
             this.btnPi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPi.Location = new System.Drawing.Point(12, 344);
+            this.btnPi.Location = new System.Drawing.Point(12, 346);
             this.btnPi.Name = "btnPi";
             this.btnPi.Size = new System.Drawing.Size(74, 52);
             this.btnPi.TabIndex = 2;
@@ -883,7 +887,7 @@ namespace Scientific_Calculator
             // btnFE
             // 
             this.btnFE.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFE.Location = new System.Drawing.Point(12, 404);
+            this.btnFE.Location = new System.Drawing.Point(12, 406);
             this.btnFE.Name = "btnFE";
             this.btnFE.Size = new System.Drawing.Size(74, 52);
             this.btnFE.TabIndex = 2;
@@ -964,11 +968,12 @@ namespace Scientific_Calculator
             this.Controls.Add(this.btnLeftParen);
             this.Controls.Add(this.btnMadd);
             this.Controls.Add(this.btnMS);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.displayTxtBox);
             this.Controls.Add(this.menuBar);
             this.MainMenuStrip = this.menuBar;
             this.Name = "sciCal";
             this.Text = "Scientific Calculator";
+            this.Load += new System.EventHandler(this.sciCal_Load);
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();
             this.ResumeLayout(false);
@@ -990,7 +995,7 @@ namespace Scientific_Calculator
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox displayTxtBox;
         private System.Windows.Forms.Button btnMS;
         private System.Windows.Forms.Button btnMadd;
         private System.Windows.Forms.Button btnMsub;
