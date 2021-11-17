@@ -667,6 +667,7 @@ namespace Scientific_Calculator
             this.btnSquared.TabIndex = 2;
             this.btnSquared.Text = "𝑥²";
             this.btnSquared.UseVisualStyleBackColor = true;
+            this.btnSquared.Click += new System.EventHandler(this.btnSquared_Click);
             // 
             // btnFactorial
             // 

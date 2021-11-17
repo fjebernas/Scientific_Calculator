@@ -19,7 +19,7 @@ namespace Scientific_Calculator
 
         private void sciCal_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void ReplaceZero()
@@ -102,6 +102,11 @@ namespace Scientific_Calculator
             {
                 displayTxtBox.Text = "0";
             }
+        }
+
+        private void btnSquared_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Convert.ToString(Convert.ToInt32(displayTxtBox.Text) * Convert.ToInt32(displayTxtBox.Text));
         }
     }
 }
