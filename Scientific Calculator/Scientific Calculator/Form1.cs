@@ -108,5 +108,15 @@ namespace Scientific_Calculator
         {
             displayTxtBox.Text = Convert.ToString(Convert.ToInt32(displayTxtBox.Text) * Convert.ToInt32(displayTxtBox.Text));
         }
+
+        private void btnCubed_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Convert.ToString(Convert.ToInt32(displayTxtBox.Text) * Convert.ToInt32(displayTxtBox.Text) * Convert.ToInt32(displayTxtBox.Text));
+        }
+
+        private void btnPi_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = "3.141592653589793";
+        }
     }
 }

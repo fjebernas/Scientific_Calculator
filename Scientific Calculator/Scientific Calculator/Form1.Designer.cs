@@ -748,6 +748,7 @@ namespace Scientific_Calculator
             this.btnCubed.TabIndex = 2;
             this.btnCubed.Text = "𝑥³";
             this.btnCubed.UseVisualStyleBackColor = true;
+            this.btnCubed.Click += new System.EventHandler(this.btnCubed_Click);
             // 
             // wip2
             // 
@@ -896,6 +897,7 @@ namespace Scientific_Calculator
             this.btnPi.TabIndex = 2;
             this.btnPi.Text = "π";
             this.btnPi.UseVisualStyleBackColor = true;
+            this.btnPi.Click += new System.EventHandler(this.btnPi_Click);
             // 
             // btnFE
             // 
