@@ -22,6 +22,14 @@ namespace Scientific_Calculator
             
         }
 
+        bool doPlus = false;
+        bool doOperator = false;
+        bool newEntry = false;
+        int firstOperand;
+        int secondOperand;
+        int result;
+
+        /* --------------------Button Functions-------------------- */
         private void btn1_Click(object sender, EventArgs e)
         {
             NumberPressed("1");
@@ -102,15 +110,46 @@ namespace Scientific_Calculator
         {
             displayTxtBox.Text = "3.141592653589793";
         }
+        /* --------------------Button Functions-------------------- */
 
         private void NumberPressed(string num)
         {
+            if (newEntry)
+            {
+                displayTxtBox.Text = "0";
+                newEntry = false;
+            }
+
             if (displayTxtBox.Text == "0")
             {
                 displayTxtBox.Text = "";
             }
 
             displayTxtBox.Text += num;
+
+            if (doOperator)
+            {
+                secondOperand = Convert.ToInt32(displayTxtBox.Text);
+            }
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            firstOperand = Convert.ToInt32(displayTxtBox.Text);
+            newEntry = true;
+            doOperator = true;
+            doPlus = true;
+        }
+
+        private void btnEquals_Click(object sender, EventArgs e)
+        {
+            
+            if (doPlus)
+            {
+                result = firstOperand + secondOperand;
+                displayTxtBox.Text = Convert.ToString(result);
+            }
+
         }
     }
 }
