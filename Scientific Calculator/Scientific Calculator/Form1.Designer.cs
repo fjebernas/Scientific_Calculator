@@ -211,7 +211,7 @@ namespace Scientific_Calculator
             this.displayTxtBox.BackColor = System.Drawing.SystemColors.Control;
             this.displayTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayTxtBox.Location = new System.Drawing.Point(9, 36);
-            this.displayTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.displayTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.displayTxtBox.Multiline = true;
             this.displayTxtBox.Name = "displayTxtBox";
             this.displayTxtBox.Size = new System.Drawing.Size(596, 50);
@@ -223,7 +223,7 @@ namespace Scientific_Calculator
             // 
             this.btnMS.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMS.Location = new System.Drawing.Point(429, 93);
-            this.btnMS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMS.Margin = new System.Windows.Forms.Padding(2);
             this.btnMS.Name = "btnMS";
             this.btnMS.Size = new System.Drawing.Size(56, 42);
             this.btnMS.TabIndex = 2;
@@ -234,7 +234,7 @@ namespace Scientific_Calculator
             // 
             this.btnMadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMadd.Location = new System.Drawing.Point(489, 93);
-            this.btnMadd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMadd.Margin = new System.Windows.Forms.Padding(2);
             this.btnMadd.Name = "btnMadd";
             this.btnMadd.Size = new System.Drawing.Size(56, 42);
             this.btnMadd.TabIndex = 2;
@@ -245,7 +245,7 @@ namespace Scientific_Calculator
             // 
             this.btnMsub.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMsub.Location = new System.Drawing.Point(549, 93);
-            this.btnMsub.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMsub.Margin = new System.Windows.Forms.Padding(2);
             this.btnMsub.Name = "btnMsub";
             this.btnMsub.Size = new System.Drawing.Size(56, 42);
             this.btnMsub.TabIndex = 2;
@@ -256,7 +256,7 @@ namespace Scientific_Calculator
             // 
             this.btnC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC.Location = new System.Drawing.Point(429, 140);
-            this.btnC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnC.Margin = new System.Windows.Forms.Padding(2);
             this.btnC.Name = "btnC";
             this.btnC.Size = new System.Drawing.Size(56, 42);
             this.btnC.TabIndex = 2;
@@ -267,7 +267,7 @@ namespace Scientific_Calculator
             // 
             this.btnSign.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSign.Location = new System.Drawing.Point(489, 140);
-            this.btnSign.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSign.Margin = new System.Windows.Forms.Padding(2);
             this.btnSign.Name = "btnSign";
             this.btnSign.Size = new System.Drawing.Size(56, 42);
             this.btnSign.TabIndex = 2;
@@ -278,7 +278,7 @@ namespace Scientific_Calculator
             // 
             this.btnRadical.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRadical.Location = new System.Drawing.Point(549, 140);
-            this.btnRadical.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRadical.Margin = new System.Windows.Forms.Padding(2);
             this.btnRadical.Name = "btnRadical";
             this.btnRadical.Size = new System.Drawing.Size(56, 42);
             this.btnRadical.TabIndex = 2;
@@ -289,7 +289,7 @@ namespace Scientific_Calculator
             // 
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.Location = new System.Drawing.Point(429, 187);
-            this.btn9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn9.Margin = new System.Windows.Forms.Padding(2);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(56, 42);
             this.btn9.TabIndex = 2;
@@ -301,18 +301,19 @@ namespace Scientific_Calculator
             // 
             this.btnDivide.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDivide.Location = new System.Drawing.Point(489, 187);
-            this.btnDivide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDivide.Margin = new System.Windows.Forms.Padding(2);
             this.btnDivide.Name = "btnDivide";
             this.btnDivide.Size = new System.Drawing.Size(56, 42);
             this.btnDivide.TabIndex = 2;
             this.btnDivide.Text = "/";
             this.btnDivide.UseVisualStyleBackColor = true;
+            this.btnDivide.Click += new System.EventHandler(this.btnDivide_Click);
             // 
             // btnPercentage
             // 
             this.btnPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPercentage.Location = new System.Drawing.Point(549, 187);
-            this.btnPercentage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPercentage.Margin = new System.Windows.Forms.Padding(2);
             this.btnPercentage.Name = "btnPercentage";
             this.btnPercentage.Size = new System.Drawing.Size(56, 42);
             this.btnPercentage.TabIndex = 2;
@@ -322,7 +323,7 @@ namespace Scientific_Calculator
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(429, 234);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(56, 42);
             this.button10.TabIndex = 2;
@@ -332,7 +333,7 @@ namespace Scientific_Calculator
             // button11
             // 
             this.button11.Location = new System.Drawing.Point(489, 234);
-            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(56, 42);
             this.button11.TabIndex = 2;
@@ -342,7 +343,7 @@ namespace Scientific_Calculator
             // button12
             // 
             this.button12.Location = new System.Drawing.Point(549, 234);
-            this.button12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(56, 42);
             this.button12.TabIndex = 2;
@@ -353,7 +354,7 @@ namespace Scientific_Calculator
             // 
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.Location = new System.Drawing.Point(429, 234);
-            this.btn6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn6.Margin = new System.Windows.Forms.Padding(2);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(56, 42);
             this.btn6.TabIndex = 2;
@@ -365,18 +366,19 @@ namespace Scientific_Calculator
             // 
             this.btnTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimes.Location = new System.Drawing.Point(489, 234);
-            this.btnTimes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTimes.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimes.Name = "btnTimes";
             this.btnTimes.Size = new System.Drawing.Size(56, 42);
             this.btnTimes.TabIndex = 2;
             this.btnTimes.Text = "*";
             this.btnTimes.UseVisualStyleBackColor = true;
+            this.btnTimes.Click += new System.EventHandler(this.btnTimes_Click);
             // 
             // btnOneOverX
             // 
             this.btnOneOverX.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOneOverX.Location = new System.Drawing.Point(549, 234);
-            this.btnOneOverX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOneOverX.Margin = new System.Windows.Forms.Padding(2);
             this.btnOneOverX.Name = "btnOneOverX";
             this.btnOneOverX.Size = new System.Drawing.Size(56, 42);
             this.btnOneOverX.TabIndex = 2;
@@ -388,7 +390,7 @@ namespace Scientific_Calculator
             this.btnEquals.BackColor = System.Drawing.Color.DarkGray;
             this.btnEquals.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEquals.Location = new System.Drawing.Point(549, 281);
-            this.btnEquals.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEquals.Margin = new System.Windows.Forms.Padding(2);
             this.btnEquals.Name = "btnEquals";
             this.btnEquals.Size = new System.Drawing.Size(56, 89);
             this.btnEquals.TabIndex = 2;
@@ -399,7 +401,7 @@ namespace Scientific_Calculator
             // button17
             // 
             this.button17.Location = new System.Drawing.Point(429, 281);
-            this.button17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button17.Margin = new System.Windows.Forms.Padding(2);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(56, 42);
             this.button17.TabIndex = 2;
@@ -410,7 +412,7 @@ namespace Scientific_Calculator
             // 
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.Location = new System.Drawing.Point(429, 281);
-            this.btn3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn3.Margin = new System.Windows.Forms.Padding(2);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(56, 42);
             this.btn3.TabIndex = 2;
@@ -421,7 +423,7 @@ namespace Scientific_Calculator
             // button19
             // 
             this.button19.Location = new System.Drawing.Point(489, 281);
-            this.button19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button19.Margin = new System.Windows.Forms.Padding(2);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(56, 42);
             this.button19.TabIndex = 2;
@@ -432,17 +434,18 @@ namespace Scientific_Calculator
             // 
             this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinus.Location = new System.Drawing.Point(489, 281);
-            this.btnMinus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinus.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(56, 42);
             this.btnMinus.TabIndex = 2;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
             // button21
             // 
             this.button21.Location = new System.Drawing.Point(429, 328);
-            this.button21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button21.Margin = new System.Windows.Forms.Padding(2);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(56, 42);
             this.button21.TabIndex = 2;
@@ -453,7 +456,7 @@ namespace Scientific_Calculator
             // 
             this.btnDecimalPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecimalPoint.Location = new System.Drawing.Point(429, 328);
-            this.btnDecimalPoint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDecimalPoint.Margin = new System.Windows.Forms.Padding(2);
             this.btnDecimalPoint.Name = "btnDecimalPoint";
             this.btnDecimalPoint.Size = new System.Drawing.Size(56, 42);
             this.btnDecimalPoint.TabIndex = 2;
@@ -463,7 +466,7 @@ namespace Scientific_Calculator
             // button23
             // 
             this.button23.Location = new System.Drawing.Point(489, 328);
-            this.button23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button23.Margin = new System.Windows.Forms.Padding(2);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(56, 42);
             this.button23.TabIndex = 2;
@@ -474,7 +477,7 @@ namespace Scientific_Calculator
             // 
             this.btnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlus.Location = new System.Drawing.Point(489, 328);
-            this.btnPlus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPlus.Margin = new System.Windows.Forms.Padding(2);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(56, 42);
             this.btnPlus.TabIndex = 2;
@@ -486,7 +489,7 @@ namespace Scientific_Calculator
             // 
             this.btnMR.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMR.Location = new System.Drawing.Point(369, 93);
-            this.btnMR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMR.Margin = new System.Windows.Forms.Padding(2);
             this.btnMR.Name = "btnMR";
             this.btnMR.Size = new System.Drawing.Size(56, 42);
             this.btnMR.TabIndex = 2;
@@ -497,7 +500,7 @@ namespace Scientific_Calculator
             // 
             this.btnCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCE.Location = new System.Drawing.Point(369, 140);
-            this.btnCE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCE.Margin = new System.Windows.Forms.Padding(2);
             this.btnCE.Name = "btnCE";
             this.btnCE.Size = new System.Drawing.Size(56, 42);
             this.btnCE.TabIndex = 2;
@@ -509,7 +512,7 @@ namespace Scientific_Calculator
             // 
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.Location = new System.Drawing.Point(369, 187);
-            this.btn8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn8.Margin = new System.Windows.Forms.Padding(2);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(56, 42);
             this.btn8.TabIndex = 2;
@@ -520,7 +523,7 @@ namespace Scientific_Calculator
             // button28
             // 
             this.button28.Location = new System.Drawing.Point(369, 234);
-            this.button28.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button28.Margin = new System.Windows.Forms.Padding(2);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(56, 42);
             this.button28.TabIndex = 2;
@@ -530,7 +533,7 @@ namespace Scientific_Calculator
             // button29
             // 
             this.button29.Location = new System.Drawing.Point(369, 281);
-            this.button29.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button29.Margin = new System.Windows.Forms.Padding(2);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(56, 42);
             this.button29.TabIndex = 2;
@@ -541,7 +544,7 @@ namespace Scientific_Calculator
             // 
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.Location = new System.Drawing.Point(369, 234);
-            this.btn5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn5.Margin = new System.Windows.Forms.Padding(2);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(56, 42);
             this.btn5.TabIndex = 2;
@@ -552,7 +555,7 @@ namespace Scientific_Calculator
             // button31
             // 
             this.button31.Location = new System.Drawing.Point(369, 328);
-            this.button31.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button31.Margin = new System.Windows.Forms.Padding(2);
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(56, 42);
             this.button31.TabIndex = 2;
@@ -563,7 +566,7 @@ namespace Scientific_Calculator
             // 
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.Location = new System.Drawing.Point(369, 281);
-            this.btn2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn2.Margin = new System.Windows.Forms.Padding(2);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(56, 42);
             this.btn2.TabIndex = 2;
@@ -575,7 +578,7 @@ namespace Scientific_Calculator
             // 
             this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.Location = new System.Drawing.Point(309, 328);
-            this.btn0.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn0.Margin = new System.Windows.Forms.Padding(2);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(116, 42);
             this.btn0.TabIndex = 2;
@@ -587,7 +590,7 @@ namespace Scientific_Calculator
             // 
             this.btnMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMC.Location = new System.Drawing.Point(309, 93);
-            this.btnMC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMC.Margin = new System.Windows.Forms.Padding(2);
             this.btnMC.Name = "btnMC";
             this.btnMC.Size = new System.Drawing.Size(56, 42);
             this.btnMC.TabIndex = 2;
@@ -598,7 +601,7 @@ namespace Scientific_Calculator
             // 
             this.btnBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackspace.Location = new System.Drawing.Point(309, 140);
-            this.btnBackspace.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBackspace.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackspace.Name = "btnBackspace";
             this.btnBackspace.Size = new System.Drawing.Size(56, 42);
             this.btnBackspace.TabIndex = 2;
@@ -610,7 +613,7 @@ namespace Scientific_Calculator
             // 
             this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.Location = new System.Drawing.Point(309, 187);
-            this.btn7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn7.Margin = new System.Windows.Forms.Padding(2);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(56, 42);
             this.btn7.TabIndex = 2;
@@ -621,7 +624,7 @@ namespace Scientific_Calculator
             // button37
             // 
             this.button37.Location = new System.Drawing.Point(309, 234);
-            this.button37.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button37.Margin = new System.Windows.Forms.Padding(2);
             this.button37.Name = "button37";
             this.button37.Size = new System.Drawing.Size(56, 42);
             this.button37.TabIndex = 2;
@@ -631,7 +634,7 @@ namespace Scientific_Calculator
             // button38
             // 
             this.button38.Location = new System.Drawing.Point(309, 281);
-            this.button38.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button38.Margin = new System.Windows.Forms.Padding(2);
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(56, 42);
             this.button38.TabIndex = 2;
@@ -642,7 +645,7 @@ namespace Scientific_Calculator
             // 
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.Location = new System.Drawing.Point(309, 234);
-            this.btn4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn4.Margin = new System.Windows.Forms.Padding(2);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(56, 42);
             this.btn4.TabIndex = 2;
@@ -654,7 +657,7 @@ namespace Scientific_Calculator
             // 
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.Location = new System.Drawing.Point(309, 281);
-            this.btn1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn1.Margin = new System.Windows.Forms.Padding(2);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(56, 42);
             this.btn1.TabIndex = 2;
@@ -666,7 +669,7 @@ namespace Scientific_Calculator
             // 
             this.btnLeftParen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeftParen.Location = new System.Drawing.Point(189, 140);
-            this.btnLeftParen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLeftParen.Margin = new System.Windows.Forms.Padding(2);
             this.btnLeftParen.Name = "btnLeftParen";
             this.btnLeftParen.Size = new System.Drawing.Size(56, 42);
             this.btnLeftParen.TabIndex = 2;
@@ -677,7 +680,7 @@ namespace Scientific_Calculator
             // 
             this.btnRightParen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRightParen.Location = new System.Drawing.Point(249, 140);
-            this.btnRightParen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRightParen.Margin = new System.Windows.Forms.Padding(2);
             this.btnRightParen.Name = "btnRightParen";
             this.btnRightParen.Size = new System.Drawing.Size(56, 42);
             this.btnRightParen.TabIndex = 2;
@@ -688,7 +691,7 @@ namespace Scientific_Calculator
             // 
             this.btnLn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLn.Location = new System.Drawing.Point(129, 140);
-            this.btnLn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLn.Margin = new System.Windows.Forms.Padding(2);
             this.btnLn.Name = "btnLn";
             this.btnLn.Size = new System.Drawing.Size(56, 42);
             this.btnLn.TabIndex = 2;
@@ -699,7 +702,7 @@ namespace Scientific_Calculator
             // 
             this.btnInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInv.Location = new System.Drawing.Point(69, 140);
-            this.btnInv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInv.Margin = new System.Windows.Forms.Padding(2);
             this.btnInv.Name = "btnInv";
             this.btnInv.Size = new System.Drawing.Size(56, 42);
             this.btnInv.TabIndex = 2;
@@ -710,7 +713,7 @@ namespace Scientific_Calculator
             // 
             this.btnSquared.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSquared.Location = new System.Drawing.Point(189, 187);
-            this.btnSquared.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSquared.Margin = new System.Windows.Forms.Padding(2);
             this.btnSquared.Name = "btnSquared";
             this.btnSquared.Size = new System.Drawing.Size(56, 42);
             this.btnSquared.TabIndex = 2;
@@ -722,7 +725,7 @@ namespace Scientific_Calculator
             // 
             this.btnFactorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFactorial.Location = new System.Drawing.Point(249, 187);
-            this.btnFactorial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFactorial.Margin = new System.Windows.Forms.Padding(2);
             this.btnFactorial.Name = "btnFactorial";
             this.btnFactorial.Size = new System.Drawing.Size(56, 42);
             this.btnFactorial.TabIndex = 2;
@@ -733,7 +736,7 @@ namespace Scientific_Calculator
             // 
             this.btnSin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSin.Location = new System.Drawing.Point(129, 187);
-            this.btnSin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSin.Margin = new System.Windows.Forms.Padding(2);
             this.btnSin.Name = "btnSin";
             this.btnSin.Size = new System.Drawing.Size(56, 42);
             this.btnSin.TabIndex = 2;
@@ -744,7 +747,7 @@ namespace Scientific_Calculator
             // 
             this.buttonSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSinh.Location = new System.Drawing.Point(69, 187);
-            this.buttonSinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSinh.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSinh.Name = "buttonSinh";
             this.buttonSinh.Size = new System.Drawing.Size(56, 42);
             this.buttonSinh.TabIndex = 2;
@@ -755,7 +758,7 @@ namespace Scientific_Calculator
             // 
             this.btnExpToY.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExpToY.Location = new System.Drawing.Point(189, 234);
-            this.btnExpToY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExpToY.Margin = new System.Windows.Forms.Padding(2);
             this.btnExpToY.Name = "btnExpToY";
             this.btnExpToY.Size = new System.Drawing.Size(56, 42);
             this.btnExpToY.TabIndex = 2;
@@ -766,7 +769,7 @@ namespace Scientific_Calculator
             // 
             this.wip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wip1.Location = new System.Drawing.Point(249, 234);
-            this.wip1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wip1.Margin = new System.Windows.Forms.Padding(2);
             this.wip1.Name = "wip1";
             this.wip1.Size = new System.Drawing.Size(56, 42);
             this.wip1.TabIndex = 2;
@@ -777,7 +780,7 @@ namespace Scientific_Calculator
             // 
             this.btnCos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCos.Location = new System.Drawing.Point(129, 234);
-            this.btnCos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCos.Margin = new System.Windows.Forms.Padding(2);
             this.btnCos.Name = "btnCos";
             this.btnCos.Size = new System.Drawing.Size(56, 42);
             this.btnCos.TabIndex = 2;
@@ -788,7 +791,7 @@ namespace Scientific_Calculator
             // 
             this.btnCosh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCosh.Location = new System.Drawing.Point(69, 234);
-            this.btnCosh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCosh.Margin = new System.Windows.Forms.Padding(2);
             this.btnCosh.Name = "btnCosh";
             this.btnCosh.Size = new System.Drawing.Size(56, 42);
             this.btnCosh.TabIndex = 2;
@@ -799,7 +802,7 @@ namespace Scientific_Calculator
             // 
             this.btnCubed.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCubed.Location = new System.Drawing.Point(189, 281);
-            this.btnCubed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCubed.Margin = new System.Windows.Forms.Padding(2);
             this.btnCubed.Name = "btnCubed";
             this.btnCubed.Size = new System.Drawing.Size(56, 42);
             this.btnCubed.TabIndex = 2;
@@ -811,7 +814,7 @@ namespace Scientific_Calculator
             // 
             this.wip2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wip2.Location = new System.Drawing.Point(249, 281);
-            this.wip2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wip2.Margin = new System.Windows.Forms.Padding(2);
             this.wip2.Name = "wip2";
             this.wip2.Size = new System.Drawing.Size(56, 42);
             this.wip2.TabIndex = 2;
@@ -822,7 +825,7 @@ namespace Scientific_Calculator
             // 
             this.btnTan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTan.Location = new System.Drawing.Point(129, 281);
-            this.btnTan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTan.Margin = new System.Windows.Forms.Padding(2);
             this.btnTan.Name = "btnTan";
             this.btnTan.Size = new System.Drawing.Size(56, 42);
             this.btnTan.TabIndex = 2;
@@ -833,7 +836,7 @@ namespace Scientific_Calculator
             // 
             this.btnTanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTanh.Location = new System.Drawing.Point(69, 281);
-            this.btnTanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTanh.Margin = new System.Windows.Forms.Padding(2);
             this.btnTanh.Name = "btnTanh";
             this.btnTanh.Size = new System.Drawing.Size(56, 42);
             this.btnTanh.TabIndex = 2;
@@ -844,7 +847,7 @@ namespace Scientific_Calculator
             // 
             this.btnLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLog.Location = new System.Drawing.Point(189, 330);
-            this.btnLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLog.Margin = new System.Windows.Forms.Padding(2);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(56, 42);
             this.btnLog.TabIndex = 2;
@@ -855,7 +858,7 @@ namespace Scientific_Calculator
             // 
             this.btnTenRaisedToX.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTenRaisedToX.Location = new System.Drawing.Point(249, 330);
-            this.btnTenRaisedToX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTenRaisedToX.Margin = new System.Windows.Forms.Padding(2);
             this.btnTenRaisedToX.Name = "btnTenRaisedToX";
             this.btnTenRaisedToX.Size = new System.Drawing.Size(56, 42);
             this.btnTenRaisedToX.TabIndex = 2;
@@ -866,7 +869,7 @@ namespace Scientific_Calculator
             // 
             this.btnMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMod.Location = new System.Drawing.Point(129, 330);
-            this.btnMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMod.Margin = new System.Windows.Forms.Padding(2);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(56, 42);
             this.btnMod.TabIndex = 2;
@@ -877,7 +880,7 @@ namespace Scientific_Calculator
             // 
             this.btnExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExp.Location = new System.Drawing.Point(69, 330);
-            this.btnExp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExp.Margin = new System.Windows.Forms.Padding(2);
             this.btnExp.Name = "btnExp";
             this.btnExp.Size = new System.Drawing.Size(56, 42);
             this.btnExp.TabIndex = 2;
@@ -890,7 +893,7 @@ namespace Scientific_Calculator
             this.radioDegrees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioDegrees.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.radioDegrees.Location = new System.Drawing.Point(31, 103);
-            this.radioDegrees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioDegrees.Margin = new System.Windows.Forms.Padding(2);
             this.radioDegrees.Name = "radioDegrees";
             this.radioDegrees.Size = new System.Drawing.Size(88, 24);
             this.radioDegrees.TabIndex = 3;
@@ -904,7 +907,7 @@ namespace Scientific_Calculator
             this.radioRadians.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioRadians.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.radioRadians.Location = new System.Drawing.Point(129, 103);
-            this.radioRadians.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioRadians.Margin = new System.Windows.Forms.Padding(2);
             this.radioRadians.Name = "radioRadians";
             this.radioRadians.Size = new System.Drawing.Size(86, 24);
             this.radioRadians.TabIndex = 3;
@@ -918,7 +921,7 @@ namespace Scientific_Calculator
             this.radioGrads.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioGrads.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.radioGrads.Location = new System.Drawing.Point(222, 103);
-            this.radioGrads.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioGrads.Margin = new System.Windows.Forms.Padding(2);
             this.radioGrads.Name = "radioGrads";
             this.radioGrads.Size = new System.Drawing.Size(71, 24);
             this.radioGrads.TabIndex = 3;
@@ -930,7 +933,7 @@ namespace Scientific_Calculator
             // 
             this.dummyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dummyButton.Location = new System.Drawing.Point(9, 140);
-            this.dummyButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dummyButton.Margin = new System.Windows.Forms.Padding(2);
             this.dummyButton.Name = "dummyButton";
             this.dummyButton.Size = new System.Drawing.Size(56, 42);
             this.dummyButton.TabIndex = 2;
@@ -940,7 +943,7 @@ namespace Scientific_Calculator
             // 
             this.btnInt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInt.Location = new System.Drawing.Point(9, 187);
-            this.btnInt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInt.Margin = new System.Windows.Forms.Padding(2);
             this.btnInt.Name = "btnInt";
             this.btnInt.Size = new System.Drawing.Size(56, 42);
             this.btnInt.TabIndex = 2;
@@ -951,7 +954,7 @@ namespace Scientific_Calculator
             // 
             this.btnDMS.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDMS.Location = new System.Drawing.Point(9, 234);
-            this.btnDMS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDMS.Margin = new System.Windows.Forms.Padding(2);
             this.btnDMS.Name = "btnDMS";
             this.btnDMS.Size = new System.Drawing.Size(56, 42);
             this.btnDMS.TabIndex = 2;
@@ -962,7 +965,7 @@ namespace Scientific_Calculator
             // 
             this.btnPi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPi.Location = new System.Drawing.Point(9, 281);
-            this.btnPi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPi.Margin = new System.Windows.Forms.Padding(2);
             this.btnPi.Name = "btnPi";
             this.btnPi.Size = new System.Drawing.Size(56, 42);
             this.btnPi.TabIndex = 2;
@@ -974,7 +977,7 @@ namespace Scientific_Calculator
             // 
             this.btnFE.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFE.Location = new System.Drawing.Point(9, 330);
-            this.btnFE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFE.Margin = new System.Windows.Forms.Padding(2);
             this.btnFE.Name = "btnFE";
             this.btnFE.Size = new System.Drawing.Size(56, 42);
             this.btnFE.TabIndex = 2;
@@ -1058,7 +1061,7 @@ namespace Scientific_Calculator
             this.Controls.Add(this.displayTxtBox);
             this.Controls.Add(this.menuBar);
             this.MainMenuStrip = this.menuBar;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "sciCal";
             this.Text = "Scientific Calculator";
             this.Load += new System.EventHandler(this.sciCal_Load);

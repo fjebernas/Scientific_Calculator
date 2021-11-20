@@ -22,14 +22,18 @@ namespace Scientific_Calculator
             
         }
 
-        bool doPlus = false;
         bool doOperator = false;
         bool newEntry = false;
-        int firstOperand;
-        int secondOperand;
-        int result;
 
-        /* --------------------Button Functions-------------------- */
+        double firstOperand;
+        double secondOperand;
+        double result;
+
+        string theOperator;
+
+        /* --------------------Button Functions(below)-------------------- */
+
+        /* ---- NUMBERS(below) ---- */
         private void btn1_Click(object sender, EventArgs e)
         {
             NumberPressed("1");
@@ -79,6 +83,7 @@ namespace Scientific_Calculator
         {
             NumberPressed("0");
         }
+        /* ---- NUMBERS(above) ---- */
 
         private void btnCE_Click(object sender, EventArgs e)
         {
@@ -110,7 +115,60 @@ namespace Scientific_Calculator
         {
             displayTxtBox.Text = "3.141592653589793";
         }
-        /* --------------------Button Functions-------------------- */
+
+        /* ---- OPERATORS(below) ---- */
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            OperationSetter();
+            theOperator = "+";
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            OperationSetter();
+            theOperator = "-";
+        }
+
+        private void btnTimes_Click(object sender, EventArgs e)
+        {
+            OperationSetter();
+            theOperator = "*";
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            OperationSetter();
+            theOperator = "/";
+        }
+
+        private void btnEquals_Click(object sender, EventArgs e)
+        {
+            switch (theOperator)
+            {
+                case "+":
+                    result = firstOperand + secondOperand;
+                    displayTxtBox.Text = Convert.ToString(result);
+                    break;
+
+                case "-":
+                    result = firstOperand - secondOperand;
+                    displayTxtBox.Text = Convert.ToString(result);
+                    break;
+
+                case "*":
+                    result = firstOperand * secondOperand;
+                    displayTxtBox.Text = Convert.ToString(result);
+                    break;
+
+                case "/":
+                    result = firstOperand / secondOperand;
+                    displayTxtBox.Text = Convert.ToString(result);
+                    break;
+            }
+        }
+        /* ---- OPERATORS(above) ---- */
+
+        /* --------------------Button Functions(above)-------------------- */
 
         private void NumberPressed(string num)
         {
@@ -133,23 +191,12 @@ namespace Scientific_Calculator
             }
         }
 
-        private void btnPlus_Click(object sender, EventArgs e)
+        private void OperationSetter()
         {
             firstOperand = Convert.ToInt32(displayTxtBox.Text);
+
             newEntry = true;
             doOperator = true;
-            doPlus = true;
-        }
-
-        private void btnEquals_Click(object sender, EventArgs e)
-        {
-            
-            if (doPlus)
-            {
-                result = firstOperand + secondOperand;
-                displayTxtBox.Text = Convert.ToString(result);
-            }
-
         }
     }
 }
