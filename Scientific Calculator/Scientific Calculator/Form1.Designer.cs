@@ -230,6 +230,7 @@ namespace Scientific_Calculator
             this.btnMS.TabIndex = 2;
             this.btnMS.Text = "MS";
             this.btnMS.UseVisualStyleBackColor = true;
+            this.btnMS.Click += new System.EventHandler(this.btnMS_Click);
             // 
             // btnMadd
             // 
@@ -241,6 +242,7 @@ namespace Scientific_Calculator
             this.btnMadd.TabIndex = 2;
             this.btnMadd.Text = "M+";
             this.btnMadd.UseVisualStyleBackColor = true;
+            this.btnMadd.Click += new System.EventHandler(this.btnMadd_Click);
             // 
             // btnMsub
             // 
@@ -252,6 +254,7 @@ namespace Scientific_Calculator
             this.btnMsub.TabIndex = 2;
             this.btnMsub.Text = "M-";
             this.btnMsub.UseVisualStyleBackColor = true;
+            this.btnMsub.Click += new System.EventHandler(this.btnMsub_Click);
             // 
             // btnC
             // 
@@ -496,6 +499,7 @@ namespace Scientific_Calculator
             this.btnMR.TabIndex = 2;
             this.btnMR.Text = "MR";
             this.btnMR.UseVisualStyleBackColor = true;
+            this.btnMR.Click += new System.EventHandler(this.btnMR_Click);
             // 
             // btnCE
             // 
@@ -597,6 +601,7 @@ namespace Scientific_Calculator
             this.btnMC.TabIndex = 2;
             this.btnMC.Text = "MC";
             this.btnMC.UseVisualStyleBackColor = true;
+            this.btnMC.Click += new System.EventHandler(this.btnMC_Click);
             // 
             // btnBackspace
             // 

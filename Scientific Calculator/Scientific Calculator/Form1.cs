@@ -28,6 +28,7 @@ namespace Scientific_Calculator
         double firstOperand;
         double secondOperand;
         double result;
+        double memoryNumber = 0;
 
         string theOperator;
 
@@ -109,6 +110,31 @@ namespace Scientific_Calculator
         private void btnCubed_Click(object sender, EventArgs e)
         {
             displayTxtBox.Text = Convert.ToString(Convert.ToInt32(displayTxtBox.Text) * Convert.ToInt32(displayTxtBox.Text) * Convert.ToInt32(displayTxtBox.Text));
+        }
+
+        private void btnMS_Click(object sender, EventArgs e)
+        {
+            memoryNumber = Convert.ToDouble(displayTxtBox.Text);
+        }
+
+        private void btnMR_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Convert.ToString(memoryNumber);
+        }
+
+        private void btnMC_Click(object sender, EventArgs e)
+        {
+            memoryNumber = 0;
+        }
+
+        private void btnMadd_Click(object sender, EventArgs e)
+        {
+            memoryNumber += Convert.ToDouble(displayTxtBox.Text);
+        }
+
+        private void btnMsub_Click(object sender, EventArgs e)
+        {
+            memoryNumber -= Convert.ToDouble(displayTxtBox.Text);
         }
 
         private void btnPi_Click(object sender, EventArgs e)
@@ -198,5 +224,7 @@ namespace Scientific_Calculator
             newEntry = true;
             doOperator = true;
         }
+
+        
     }
 }
