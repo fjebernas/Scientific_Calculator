@@ -214,6 +214,7 @@ namespace Scientific_Calculator
             this.displayTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.displayTxtBox.Multiline = true;
             this.displayTxtBox.Name = "displayTxtBox";
+            this.displayTxtBox.ReadOnly = true;
             this.displayTxtBox.Size = new System.Drawing.Size(596, 50);
             this.displayTxtBox.TabIndex = 1;
             this.displayTxtBox.Text = "0";
