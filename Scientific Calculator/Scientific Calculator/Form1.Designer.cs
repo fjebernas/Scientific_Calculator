@@ -266,6 +266,7 @@ namespace Scientific_Calculator
             this.btnC.TabIndex = 2;
             this.btnC.Text = "C";
             this.btnC.UseVisualStyleBackColor = true;
+            this.btnC.Click += new System.EventHandler(this.btnC_Click);
             // 
             // btnSign
             // 

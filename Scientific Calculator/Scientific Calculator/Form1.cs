@@ -24,6 +24,8 @@ namespace Scientific_Calculator
 
         bool doOperator = false;
         bool newEntry = false;
+        bool flagFirstOperand = false;
+        bool flagSecondOperand = false;
 
         double firstOperand;
         double secondOperand;
@@ -169,27 +171,43 @@ namespace Scientific_Calculator
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            switch (theOperator)
+            if (doOperator)
             {
-                case "+":
-                    result = firstOperand + secondOperand;
-                    displayTxtBox.Text = Convert.ToString(result);
-                    break;
+                secondOperand = Convert.ToInt32(displayTxtBox.Text);
 
-                case "-":
-                    result = firstOperand - secondOperand;
-                    displayTxtBox.Text = Convert.ToString(result);
-                    break;
+                flagSecondOperand = true;
+            }
 
-                case "*":
-                    result = firstOperand * secondOperand;
-                    displayTxtBox.Text = Convert.ToString(result);
-                    break;
+            if (flagFirstOperand && flagSecondOperand)
+            {
+                switch (theOperator)
+                {
+                    case "+":
+                        result = firstOperand + secondOperand;
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
 
-                case "/":
-                    result = firstOperand / secondOperand;
-                    displayTxtBox.Text = Convert.ToString(result);
-                    break;
+                    case "-":
+                        result = firstOperand - secondOperand;
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
+
+                    case "*":
+                        result = firstOperand * secondOperand;
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
+
+                    case "/":
+                        result = firstOperand / secondOperand;
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
+
+                    default:
+                        displayTxtBox.Text = displayTxtBox.Text;
+                        break;
+                }
+
+                flagSecondOperand = false;
             }
         }
         /* ---- OPERATORS(above) ---- */
@@ -210,21 +228,26 @@ namespace Scientific_Calculator
             }
 
             displayTxtBox.Text += num;
-
-            if (doOperator)
-            {
-                secondOperand = Convert.ToInt32(displayTxtBox.Text);
-            }
         }
 
         private void OperationSetter()
         {
             firstOperand = Convert.ToInt32(displayTxtBox.Text);
 
+            flagFirstOperand = true;
             newEntry = true;
             doOperator = true;
         }
 
-        
+        private void btnC_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = "0";
+            firstOperand = 0;
+            secondOperand = 0;
+
+            flagFirstOperand = false;
+            flagFirstOperand = false;
+            doOperator = false;
+        }
     }
 }
