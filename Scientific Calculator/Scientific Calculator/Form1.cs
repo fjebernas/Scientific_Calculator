@@ -250,5 +250,25 @@ namespace Scientific_Calculator
             flagSecondOperand = false;
             newEntry = false;
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (PreClosingConfirmation() == System.Windows.Forms.DialogResult.Yes)
+            {
+                Dispose(true);
+                Application.Exit();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private DialogResult PreClosingConfirmation()
+        {
+            DialogResult res = System.Windows.Forms.MessageBox.Show(" Quit Calculator?       ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return res;
+        }
     }
 }

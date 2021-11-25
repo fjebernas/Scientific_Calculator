@@ -1126,6 +1126,7 @@ namespace Scientific_Calculator
             this.MainMenuStrip = this.menuBar;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "sciCal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scientific Calculator";
             this.Load += new System.EventHandler(this.sciCal_Load);
             this.menuBar.ResumeLayout(false);
