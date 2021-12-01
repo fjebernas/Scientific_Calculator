@@ -19,7 +19,7 @@ namespace Scientific_Calculator
 
         private void sciCal_Load(object sender, EventArgs e)
         {
-            
+            this.ActiveControl = dummyButton;
         }
 
         bool newEntry = false;
@@ -90,6 +90,17 @@ namespace Scientific_Calculator
         private void btnCE_Click(object sender, EventArgs e)
         {
             displayTxtBox.Text = "0";
+        }
+
+        private void btnC_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = "0";
+            firstOperand = 0;
+            secondOperand = 0;
+
+            flagFirstOperand = false;
+            flagSecondOperand = false;
+            newEntry = false;
         }
 
         private void btnBackspace_Click(object sender, EventArgs e)
@@ -174,37 +185,35 @@ namespace Scientific_Calculator
             {
                 secondOperand = Convert.ToInt32(displayTxtBox.Text);
 
-                if (flagFirstOperand && flagSecondOperand)
+                switch (theOperator)
                 {
-                    switch (theOperator)
-                    {
-                        case "+":
-                            result = firstOperand + secondOperand;
-                            displayTxtBox.Text = Convert.ToString(result);
-                            break;
+                    case "+":
+                        result = firstOperand + secondOperand;
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
 
-                        case "-":
-                            result = firstOperand - secondOperand;
-                            displayTxtBox.Text = Convert.ToString(result);
-                            break;
+                    case "-":
+                        result = firstOperand - secondOperand;
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
 
-                        case "*":
-                            result = firstOperand * secondOperand;
-                            displayTxtBox.Text = Convert.ToString(result);
-                            break;
+                    case "*":
+                        result = firstOperand * secondOperand;
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
 
-                        case "/":
-                            result = firstOperand / secondOperand;
-                            displayTxtBox.Text = Convert.ToString(result);
-                            break;
+                    case "/":
+                        result = firstOperand / secondOperand;
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
 
-                        default:
-                            displayTxtBox.Text = displayTxtBox.Text;
-                            break;
-                    }
-
-                    flagSecondOperand = false;
+                    default:
+                        displayTxtBox.Text = displayTxtBox.Text;
+                        break;
                 }
+
+                flagFirstOperand = false;
+                flagSecondOperand = false;
             }
         }
         /* ---- OPERATORS(above) ---- */
@@ -240,35 +249,16 @@ namespace Scientific_Calculator
             newEntry = true;
         }
 
-        private void btnC_Click(object sender, EventArgs e)
+        private void btnSign_Click(object sender, EventArgs e)
         {
-            displayTxtBox.Text = "0";
-            firstOperand = 0;
-            secondOperand = 0;
-
-            flagFirstOperand = false;
-            flagSecondOperand = false;
-            newEntry = false;
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            base.OnFormClosing(e);
-            if (PreClosingConfirmation() == System.Windows.Forms.DialogResult.Yes)
+            if (displayTxtBox.Text[0] != '-' && displayTxtBox.Text != "0")
             {
-                Dispose(true);
-                Application.Exit();
-            }
-            else
+                displayTxtBox.Text = (displayTxtBox.Text).Insert(0, "-");
+            } 
+            else if (displayTxtBox.Text[0] == '-' && displayTxtBox.Text != "0")
             {
-                e.Cancel = true;
+                displayTxtBox.Text = displayTxtBox.Text.Substring(1);
             }
-        }
-
-        private DialogResult PreClosingConfirmation()
-        {
-            DialogResult res = System.Windows.Forms.MessageBox.Show(" Quit Calculator?       ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return res;
         }
     }
 }
