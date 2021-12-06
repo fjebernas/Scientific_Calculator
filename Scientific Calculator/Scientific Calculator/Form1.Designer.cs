@@ -939,6 +939,7 @@ namespace Scientific_Calculator
             this.btnSin.TabIndex = 2;
             this.btnSin.Text = "sin";
             this.btnSin.UseVisualStyleBackColor = false;
+            this.btnSin.Click += new System.EventHandler(this.btnSin_Click);
             // 
             // buttonSinh
             // 
@@ -999,6 +1000,7 @@ namespace Scientific_Calculator
             this.btnCos.TabIndex = 2;
             this.btnCos.Text = "cos";
             this.btnCos.UseVisualStyleBackColor = false;
+            this.btnCos.Click += new System.EventHandler(this.btnCos_Click);
             // 
             // btnCosh
             // 
@@ -1060,6 +1062,7 @@ namespace Scientific_Calculator
             this.btnTan.TabIndex = 2;
             this.btnTan.Text = "tan";
             this.btnTan.UseVisualStyleBackColor = false;
+            this.btnTan.Click += new System.EventHandler(this.btnTan_Click);
             // 
             // btnTanh
             // 

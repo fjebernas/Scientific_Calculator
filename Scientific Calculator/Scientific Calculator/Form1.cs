@@ -98,7 +98,7 @@ namespace Scientific_Calculator
 
         private void btnPi_Click(object sender, EventArgs e)
         {
-            displayTxtBox.Text = "3.141592653589793";
+            displayTxtBox.Text = Convert.ToString(Math.PI);
         }
 
         private void btnSign_Click(object sender, EventArgs e)
@@ -216,6 +216,26 @@ namespace Scientific_Calculator
             }
 
             displayTxtBox.Text += numBtn.Text;
+        }
+
+        // Dec 6 and onwards
+
+        private void btnSin_Click(object sender, EventArgs e)
+        {
+            double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
+            displayTxtBox.Text = Convert.ToString(Math.Sin(degrees));
+        }
+
+        private void btnCos_Click(object sender, EventArgs e)
+        {
+            double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
+            displayTxtBox.Text = Convert.ToString(Math.Cos(degrees));
+        }
+
+        private void btnTan_Click(object sender, EventArgs e)
+        {
+            double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
+            displayTxtBox.Text = Convert.ToString(Math.Tan(degrees));
         }
     }
 }
