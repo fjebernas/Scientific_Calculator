@@ -20,7 +20,25 @@ namespace Scientific_Calculator
         private void sciCal_Load(object sender, EventArgs e)
         {
             this.ActiveControl = btnTrigoDropdown;
+            this.BackColor = formBackColor;
+            foreach (Control x in Controls)
+            {
+                if (x.Tag == "ColorThisFormBackColor")
+                {
+                    x.BackColor = formBackColor;
+                }
+            }
+            foreach (Control x in Controls)
+            {
+                if (x.Tag == "normalBtn")
+                {
+                    x.BackColor = normalButtonsColor;
+                }
+            }
         }
+
+        Color normalButtonsColor = ColorTranslator.FromHtml("#1A1919");
+        Color formBackColor = ColorTranslator.FromHtml("#2B2929");
 
         private bool isTrigoCollapsed;
         private bool isFunctionCollapsed;
