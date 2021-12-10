@@ -267,5 +267,32 @@ namespace Scientific_Calculator
         {
             timerDropDownTrigo.Start();
         }
+
+        private void timerDropDownFunction_Tick(object sender, EventArgs e)
+        {
+            if (isFunctionCollapsed)
+            {
+                panelDropdownFunction.Height += 10;
+                if (panelDropdownFunction.Size == panelDropdownFunction.MaximumSize)
+                {
+                    timerDropDownFunction.Stop();
+                    isFunctionCollapsed = false;
+                }
+            }
+            else
+            {
+                panelDropdownFunction.Height -= 10;
+                if (panelDropdownFunction.Size == panelDropdownFunction.MinimumSize)
+                {
+                    timerDropDownFunction.Stop();
+                    isFunctionCollapsed = true;
+                }
+            }
+        }
+
+        private void btnFunctionDropdown_Click(object sender, EventArgs e)
+        {
+            timerDropDownFunction.Start();
+        }
     }
 }

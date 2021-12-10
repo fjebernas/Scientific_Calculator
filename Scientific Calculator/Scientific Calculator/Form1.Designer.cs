@@ -111,6 +111,7 @@ namespace Scientific_Calculator
             this.btnFunctionDropdown = new System.Windows.Forms.Button();
             this.panelDropdownFunction = new System.Windows.Forms.Panel();
             this.timerDropDownTrigo = new System.Windows.Forms.Timer(this.components);
+            this.timerDropDownFunction = new System.Windows.Forms.Timer(this.components);
             this.menuBar.SuspendLayout();
             this.panelDropdownTrigo.SuspendLayout();
             this.panelDropdownFunction.SuspendLayout();
@@ -1246,6 +1247,7 @@ namespace Scientific_Calculator
             this.btnFunctionDropdown.TabIndex = 5;
             this.btnFunctionDropdown.Text = "Function";
             this.btnFunctionDropdown.UseVisualStyleBackColor = false;
+            this.btnFunctionDropdown.Click += new System.EventHandler(this.btnFunctionDropdown_Click);
             // 
             // panelDropdownFunction
             // 
@@ -1264,6 +1266,11 @@ namespace Scientific_Calculator
             // 
             this.timerDropDownTrigo.Interval = 1;
             this.timerDropDownTrigo.Tick += new System.EventHandler(this.timerDropDownTrigo_Tick);
+            // 
+            // timerDropDownFunction
+            // 
+            this.timerDropDownFunction.Interval = 1;
+            this.timerDropDownFunction.Tick += new System.EventHandler(this.timerDropDownFunction_Tick);
             // 
             // sciCal
             // 
@@ -1431,6 +1438,7 @@ namespace Scientific_Calculator
         private System.Windows.Forms.Button btnFunctionDropdown;
         private System.Windows.Forms.Panel panelDropdownFunction;
         private System.Windows.Forms.Timer timerDropDownTrigo;
+        private System.Windows.Forms.Timer timerDropDownFunction;
     }
 }
 
