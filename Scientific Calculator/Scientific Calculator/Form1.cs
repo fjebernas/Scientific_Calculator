@@ -19,8 +19,11 @@ namespace Scientific_Calculator
 
         private void sciCal_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = dummyButton;
+            this.ActiveControl = btnTrigoDropdown;
         }
+
+        private bool isTrigoCollapsed;
+        private bool isFunctionCollapsed;
 
         bool newEntry = false;
         bool flagFirstOperand = false;
@@ -236,6 +239,33 @@ namespace Scientific_Calculator
         {
             double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
             displayTxtBox.Text = Convert.ToString(Math.Tan(degrees));
+        }
+
+        private void timerDropDownTrigo_Tick(object sender, EventArgs e)
+        {
+            if (isTrigoCollapsed)
+            {
+                panelDropdownTrigo.Height += 10;
+                if (panelDropdownTrigo.Size == panelDropdownTrigo.MaximumSize)
+                {
+                    timerDropDownTrigo.Stop();
+                    isTrigoCollapsed = false;
+                }
+            } 
+            else
+            {
+                panelDropdownTrigo.Height -= 10;
+                if (panelDropdownTrigo.Size == panelDropdownTrigo.MinimumSize)
+                {
+                    timerDropDownTrigo.Stop();
+                    isTrigoCollapsed = true;
+                }
+            }
+        }
+
+        private void btnTrigoDropdown_Click(object sender, EventArgs e)
+        {
+            timerDropDownTrigo.Start();
         }
     }
 }
