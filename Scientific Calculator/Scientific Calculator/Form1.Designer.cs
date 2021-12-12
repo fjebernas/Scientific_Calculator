@@ -80,7 +80,7 @@ namespace Scientific_Calculator
             this.btnSin = new System.Windows.Forms.Button();
             this.buttonSinh = new System.Windows.Forms.Button();
             this.btnExpToY = new System.Windows.Forms.Button();
-            this.wip1 = new System.Windows.Forms.Button();
+            this.btnAbs = new System.Windows.Forms.Button();
             this.btnCos = new System.Windows.Forms.Button();
             this.btnCosh = new System.Windows.Forms.Button();
             this.btnCubed = new System.Windows.Forms.Button();
@@ -864,22 +864,23 @@ namespace Scientific_Calculator
             this.btnExpToY.Text = "𝑥ʸ";
             this.btnExpToY.UseVisualStyleBackColor = false;
             // 
-            // wip1
+            // btnAbs
             // 
-            this.wip1.AutoSize = true;
-            this.wip1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.wip1.FlatAppearance.BorderSize = 0;
-            this.wip1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wip1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wip1.ForeColor = System.Drawing.Color.White;
-            this.wip1.Location = new System.Drawing.Point(119, 338);
-            this.wip1.Margin = new System.Windows.Forms.Padding(2);
-            this.wip1.Name = "wip1";
-            this.wip1.Size = new System.Drawing.Size(56, 42);
-            this.wip1.TabIndex = 2;
-            this.wip1.Tag = "normalBtn";
-            this.wip1.Text = "|𝑥|";
-            this.wip1.UseVisualStyleBackColor = false;
+            this.btnAbs.AutoSize = true;
+            this.btnAbs.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnAbs.FlatAppearance.BorderSize = 0;
+            this.btnAbs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbs.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbs.ForeColor = System.Drawing.Color.White;
+            this.btnAbs.Location = new System.Drawing.Point(119, 338);
+            this.btnAbs.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAbs.Name = "btnAbs";
+            this.btnAbs.Size = new System.Drawing.Size(56, 42);
+            this.btnAbs.TabIndex = 2;
+            this.btnAbs.Tag = "normalBtn";
+            this.btnAbs.Text = "|𝑥|";
+            this.btnAbs.UseVisualStyleBackColor = false;
+            this.btnAbs.Click += new System.EventHandler(this.btnAbs_Click);
             // 
             // btnCos
             // 
@@ -1026,7 +1027,7 @@ namespace Scientific_Calculator
             this.btnMod.Size = new System.Drawing.Size(56, 42);
             this.btnMod.TabIndex = 2;
             this.btnMod.Tag = "normalBtn";
-            this.btnMod.Text = "Mod";
+            this.btnMod.Text = "mod";
             this.btnMod.UseVisualStyleBackColor = false;
             // 
             // btnExp
@@ -1043,7 +1044,7 @@ namespace Scientific_Calculator
             this.btnExp.Size = new System.Drawing.Size(56, 42);
             this.btnExp.TabIndex = 2;
             this.btnExp.Tag = "normalBtn";
-            this.btnExp.Text = "Exp";
+            this.btnExp.Text = "exp";
             this.btnExp.UseVisualStyleBackColor = false;
             // 
             // radioDegrees
@@ -1224,11 +1225,13 @@ namespace Scientific_Calculator
             // 
             // timerDropDownTrigo
             // 
+            this.timerDropDownTrigo.Enabled = true;
             this.timerDropDownTrigo.Interval = 1;
             this.timerDropDownTrigo.Tick += new System.EventHandler(this.timerDropDownTrigo_Tick);
             // 
             // timerDropDownFunction
             // 
+            this.timerDropDownFunction.Enabled = true;
             this.timerDropDownFunction.Interval = 1;
             this.timerDropDownFunction.Tick += new System.EventHandler(this.timerDropDownFunction_Tick);
             // 
@@ -1278,7 +1281,7 @@ namespace Scientific_Calculator
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.wip2);
             this.Controls.Add(this.btnCubed);
-            this.Controls.Add(this.wip1);
+            this.Controls.Add(this.btnAbs);
             this.Controls.Add(this.btnExpToY);
             this.Controls.Add(this.btnFactorial);
             this.Controls.Add(this.btnSquared);
@@ -1288,6 +1291,7 @@ namespace Scientific_Calculator
             this.Controls.Add(this.btnMS);
             this.Controls.Add(this.displayTxtBox);
             this.Controls.Add(this.menuBar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuBar;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -1360,7 +1364,7 @@ namespace Scientific_Calculator
         private System.Windows.Forms.Button btnSin;
         private System.Windows.Forms.Button buttonSinh;
         private System.Windows.Forms.Button btnExpToY;
-        private System.Windows.Forms.Button wip1;
+        private System.Windows.Forms.Button btnAbs;
         private System.Windows.Forms.Button btnCos;
         private System.Windows.Forms.Button btnCosh;
         private System.Windows.Forms.Button btnCubed;

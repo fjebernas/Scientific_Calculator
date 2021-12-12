@@ -253,12 +253,20 @@ namespace Scientific_Calculator
             displayTxtBox.Text = Convert.ToString(Math.Cos(degrees));
         }
 
+        private void btnAbs_Click(object sender, EventArgs e)
+        {
+            double absValue = Convert.ToDouble(displayTxtBox.Text);
+            absValue = Math.Abs(absValue);
+            displayTxtBox.Text = Convert.ToString(absValue);
+        }
+
         private void btnTan_Click(object sender, EventArgs e)
         {
             double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
             displayTxtBox.Text = Convert.ToString(Math.Tan(degrees));
         }
 
+        //drop down panel functions
         private void timerDropDownTrigo_Tick(object sender, EventArgs e)
         {
             if (isTrigoCollapsed)
@@ -312,5 +320,7 @@ namespace Scientific_Calculator
         {
             timerDropDownFunction.Start();
         }
+
+        
     }
 }
