@@ -12,6 +12,24 @@ namespace Scientific_Calculator
 {
     public partial class sciCal : Form
     {
+        Color normalButtonsColor = ColorTranslator.FromHtml("#1A1919");
+        Color formBackColor = ColorTranslator.FromHtml("#2B2929");
+
+        private bool isCollapsed;
+        private bool isPanel1Showing = false;
+        private bool isPanel2Showing = false;
+
+        bool newEntry = false;
+        bool flagFirstOperand = false;
+        bool flagSecondOperand = false;
+
+        double firstOperand;
+        double secondOperand;
+        double result;
+        double memoryNumber = 0;
+
+        string theOperator;
+
         public sciCal()
         {
             InitializeComponent();
@@ -22,8 +40,22 @@ namespace Scientific_Calculator
             this.ActiveControl = btnEquals;
             this.BackColor = formBackColor;
 
-            panelDropdownFunction.BackColor = formBackColor;
-            panelDropdownTrigo.BackColor = formBackColor;
+            panelSlidingMenu.BackColor = formBackColor;
+            List<Button> MenuButtons = new List<Button> {
+            btnMenu1, btnMenu2, btnMenu3, btnMenu4, btnMenu5, btnMenu6, btnMenu7, btnMenu8, btnMenu9, btnMenu10, btnMenu11, btnMenu12 };
+
+            foreach (Button x in MenuButtons)
+            {
+                x.BackColor = formBackColor;
+            }
+
+            panelDropDown2.BackColor = normalButtonsColor;
+            btnSin.BackColor = normalButtonsColor;
+            btnCos.BackColor = normalButtonsColor;
+            btnTan.BackColor = normalButtonsColor;
+            btnSinh.BackColor = normalButtonsColor;
+            btnCosh.BackColor = normalButtonsColor;
+            btnTanh.BackColor = normalButtonsColor;
 
             foreach (Control x in Controls)
             {
@@ -39,25 +71,9 @@ namespace Scientific_Calculator
                     x.BackColor = normalButtonsColor;
                 }
             }
+
+            this.ShowIcon = false;
         }
-
-        Color normalButtonsColor = ColorTranslator.FromHtml("#1A1919");
-        Color formBackColor = ColorTranslator.FromHtml("#2B2929");
-
-        private bool isTrigoCollapsed;
-        private bool isFunctionCollapsed;
-
-        bool newEntry = false;
-        bool flagFirstOperand = false;
-        bool flagSecondOperand = false;
-
-        double firstOperand;
-        double secondOperand;
-        double result;
-        double memoryNumber = 0;
-
-        string theOperator;
-
        
         private void btnCE_Click(object sender, EventArgs e)
         {
@@ -271,58 +287,32 @@ namespace Scientific_Calculator
         }
 
         //drop down panel functions
-        private void timerDropDownTrigo_Tick(object sender, EventArgs e)
-        {
-            if (isTrigoCollapsed)
-            {
-                panelDropdownTrigo.Height += 10;
-                if (panelDropdownTrigo.Size == panelDropdownTrigo.MaximumSize)
-                {
-                    timerDropDownTrigo.Stop();
-                    isTrigoCollapsed = false;
-                }
-            } 
-            else
-            {
-                panelDropdownTrigo.Height -= 10;
-                if (panelDropdownTrigo.Size == panelDropdownTrigo.MinimumSize)
-                {
-                    timerDropDownTrigo.Stop();
-                    isTrigoCollapsed = true;
-                }
-            }
-        }
-
         private void btnTrigoDropdown_Click(object sender, EventArgs e)
         {
-            timerDropDownTrigo.Start();
-        }
-
-        private void timerDropDownFunction_Tick(object sender, EventArgs e)
-        {
-            if (isFunctionCollapsed)
+            if (!isPanel1Showing)
             {
-                panelDropdownFunction.Height += 10;
-                if (panelDropdownFunction.Size == panelDropdownFunction.MaximumSize)
-                {
-                    timerDropDownFunction.Stop();
-                    isFunctionCollapsed = false;
-                }
-            }
-            else
+                panelDropDown1.Visible = true;
+                isPanel1Showing = true;
+            } 
+            else if (isPanel1Showing)
             {
-                panelDropdownFunction.Height -= 10;
-                if (panelDropdownFunction.Size == panelDropdownFunction.MinimumSize)
-                {
-                    timerDropDownFunction.Stop();
-                    isFunctionCollapsed = true;
-                }
+                panelDropDown1.Visible = false;
+                isPanel1Showing = false;
             }
         }
 
-        private void btnFunctionDropdown_Click(object sender, EventArgs e)
+        private void btnModeDropdown_Click(object sender, EventArgs e)
         {
-            timerDropDownFunction.Start();
+            if (!isPanel2Showing)
+            {
+                panelDropDown2.Visible = true;
+                isPanel2Showing = true;
+            }
+            else if (isPanel2Showing)
+            {
+                panelDropDown2.Visible = false;
+                isPanel2Showing = false;
+            }
         }
 
         private void sciCal_KeyDown(object sender, KeyEventArgs e)
@@ -390,6 +380,41 @@ namespace Scientific_Calculator
             else if (e.KeyCode == Keys.Decimal)
             {
                 btnDecimalPoint.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                btnBackspace.PerformClick();
+            }
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            timerSlidingMenu.Start();
+        }
+
+        private void timerSlidingMenu_Tick(object sender, EventArgs e)
+        {
+            if (isCollapsed)
+            {
+                panelSlidingMenu.Width += 20;
+                if(panelSlidingMenu.Size == panelSlidingMenu.MaximumSize)
+                {
+                    timerSlidingMenu.Stop();
+                    isCollapsed = false;
+
+                    labelCalcuMode.Visible = false;
+                }
+            }
+            else
+            {
+                panelSlidingMenu.Width -= 20;
+                if (panelSlidingMenu.Size == panelSlidingMenu.MinimumSize)
+                {
+                    timerSlidingMenu.Stop();
+                    isCollapsed = true;
+
+                    labelCalcuMode.Visible = true;
+                }
             }
         }
     }
