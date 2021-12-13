@@ -19,7 +19,7 @@ namespace Scientific_Calculator
 
         private void sciCal_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = btnTrigoDropdown;
+            this.ActiveControl = btnEquals;
             this.BackColor = formBackColor;
 
             panelDropdownFunction.BackColor = formBackColor;
@@ -243,22 +243,6 @@ namespace Scientific_Calculator
             displayTxtBox.Text += numBtn.Text;
         }
 
-        private void NumPress(string num)
-        {
-            if (newEntry || displayTxtBox.Text == "0")
-            {
-                displayTxtBox.Text = "";
-                newEntry = false;
-            }
-
-            if (flagFirstOperand)
-            {
-                flagSecondOperand = true;
-            }
-
-            displayTxtBox.Text += num;
-        }
-
         // Dec 6 and onwards
 
         private void btnSin_Click(object sender, EventArgs e)
@@ -345,43 +329,67 @@ namespace Scientific_Calculator
         {
             if (e.KeyCode == Keys.D0 || e.KeyCode == Keys.NumPad0)
             {
-                NumPress("0");
-            } 
+                btnNum_Click(btn0, e);
+            }
             else if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
             {
-                NumPress("1");
+                btnNum_Click(btn1, e);
             }
             else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
             {
-                NumPress("2");
+                btnNum_Click(btn2, e);
             }
             else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
             {
-                NumPress("3");
+                btnNum_Click(btn3, e);
             }
             else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
             {
-                NumPress("4");
+                btnNum_Click(btn4, e);
             }
             else if (e.KeyCode == Keys.D5 || e.KeyCode == Keys.NumPad5)
             {
-                NumPress("5");
+                btnNum_Click(btn5, e);
             }
             else if (e.KeyCode == Keys.D6 || e.KeyCode == Keys.NumPad6)
             {
-                NumPress("6");
+                btnNum_Click(btn6, e);
             }
             else if (e.KeyCode == Keys.D7 || e.KeyCode == Keys.NumPad7)
             {
-                NumPress("7");
+                btnNum_Click(btn7, e);
             }
             else if (e.KeyCode == Keys.D8 || e.KeyCode == Keys.NumPad8)
             {
-                NumPress("8");
+                btnNum_Click(btn8, e);
             }
             else if (e.KeyCode == Keys.D9 || e.KeyCode == Keys.NumPad9)
             {
-                NumPress("9");
+                btnNum_Click(btn9, e);
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                btnEquals.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Add)
+            {
+                btnPlus.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Subtract)
+            {
+                btnMinus.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Multiply)
+            {
+                btnTimes.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Divide)
+            {
+                btnDivide.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Decimal)
+            {
+                btnDecimalPoint.PerformClick();
             }
         }
     }
