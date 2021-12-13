@@ -21,6 +21,10 @@ namespace Scientific_Calculator
         {
             this.ActiveControl = btnTrigoDropdown;
             this.BackColor = formBackColor;
+
+            panelDropdownFunction.BackColor = formBackColor;
+            panelDropdownTrigo.BackColor = formBackColor;
+
             foreach (Control x in Controls)
             {
                 if (x.Tag == "ColorThisFormBackColor")
@@ -239,6 +243,22 @@ namespace Scientific_Calculator
             displayTxtBox.Text += numBtn.Text;
         }
 
+        private void NumPress(string num)
+        {
+            if (newEntry || displayTxtBox.Text == "0")
+            {
+                displayTxtBox.Text = "";
+                newEntry = false;
+            }
+
+            if (flagFirstOperand)
+            {
+                flagSecondOperand = true;
+            }
+
+            displayTxtBox.Text += num;
+        }
+
         // Dec 6 and onwards
 
         private void btnSin_Click(object sender, EventArgs e)
@@ -321,6 +341,48 @@ namespace Scientific_Calculator
             timerDropDownFunction.Start();
         }
 
-        
+        private void sciCal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D0 || e.KeyCode == Keys.NumPad0)
+            {
+                NumPress("0");
+            } 
+            else if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
+            {
+                NumPress("1");
+            }
+            else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
+            {
+                NumPress("2");
+            }
+            else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+            {
+                NumPress("3");
+            }
+            else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
+            {
+                NumPress("4");
+            }
+            else if (e.KeyCode == Keys.D5 || e.KeyCode == Keys.NumPad5)
+            {
+                NumPress("5");
+            }
+            else if (e.KeyCode == Keys.D6 || e.KeyCode == Keys.NumPad6)
+            {
+                NumPress("6");
+            }
+            else if (e.KeyCode == Keys.D7 || e.KeyCode == Keys.NumPad7)
+            {
+                NumPress("7");
+            }
+            else if (e.KeyCode == Keys.D8 || e.KeyCode == Keys.NumPad8)
+            {
+                NumPress("8");
+            }
+            else if (e.KeyCode == Keys.D9 || e.KeyCode == Keys.NumPad9)
+            {
+                NumPress("9");
+            }
+        }
     }
 }
