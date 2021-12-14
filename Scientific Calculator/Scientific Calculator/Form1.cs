@@ -394,9 +394,11 @@ namespace Scientific_Calculator
 
         private void timerSlidingMenu_Tick(object sender, EventArgs e)
         {
+            
+
             if (isCollapsed)
             {
-                panelSlidingMenu.Width += 20;
+                panelSlidingMenu.Width += 40;
                 if(panelSlidingMenu.Size == panelSlidingMenu.MaximumSize)
                 {
                     timerSlidingMenu.Stop();
@@ -407,7 +409,7 @@ namespace Scientific_Calculator
             }
             else
             {
-                panelSlidingMenu.Width -= 20;
+                panelSlidingMenu.Width -= 40;
                 if (panelSlidingMenu.Size == panelSlidingMenu.MinimumSize)
                 {
                     timerSlidingMenu.Stop();
@@ -416,6 +418,11 @@ namespace Scientific_Calculator
                     labelCalcuMode.Visible = true;
                 }
             }
+        }
+
+        private void btnOneOverX_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Convert.ToString(1 / Convert.ToDouble(displayTxtBox.Text));
         }
     }
 }
