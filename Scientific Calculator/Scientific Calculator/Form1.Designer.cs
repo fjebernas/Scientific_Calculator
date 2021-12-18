@@ -233,6 +233,7 @@ namespace Scientific_Calculator
             this.btnRadical.Tag = "normalBtn";
             this.btnRadical.Text = "√";
             this.btnRadical.UseVisualStyleBackColor = false;
+            this.btnRadical.Click += new System.EventHandler(this.btnRadical_Click);
             // 
             // btn9
             // 

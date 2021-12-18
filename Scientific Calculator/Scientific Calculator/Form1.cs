@@ -424,5 +424,10 @@ namespace Scientific_Calculator
         {
             displayTxtBox.Text = Convert.ToString(1 / Convert.ToDouble(displayTxtBox.Text));
         }
+
+        private void btnRadical_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Convert.ToString(Math.Sqrt(Convert.ToDouble(displayTxtBox.Text)));
+        }
     }
 }
