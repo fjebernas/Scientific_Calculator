@@ -746,6 +746,7 @@ namespace Scientific_Calculator
             this.btnExpToY.Tag = "normalBtn";
             this.btnExpToY.Text = "𝑥ʸ";
             this.btnExpToY.UseVisualStyleBackColor = false;
+            this.btnExpToY.Click += new System.EventHandler(this.btnExpToY_Click);
             // 
             // btnAbs
             // 

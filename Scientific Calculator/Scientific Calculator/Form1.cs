@@ -193,6 +193,12 @@ namespace Scientific_Calculator
             theOperator = "/";
         }
 
+        private void btnExpToY_Click(object sender, EventArgs e)
+        {
+            OperationSetter();
+            theOperator = "x raised to y";
+        }
+
         private void btnEquals_Click(object sender, EventArgs e)
         {
             if (flagFirstOperand && flagSecondOperand)
@@ -221,6 +227,11 @@ namespace Scientific_Calculator
                         displayTxtBox.Text = Convert.ToString(result);
                         break;
 
+                    case "x raised to y":
+                        result = Math.Pow(firstOperand, secondOperand);
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
+
                     default:
                         displayTxtBox.Text = displayTxtBox.Text;
                         break;
@@ -245,18 +256,21 @@ namespace Scientific_Calculator
         {
             Button numBtn = (Button)sender;
 
-            if (newEntry || displayTxtBox.Text == "0")
+            if (displayTxtBox.Text.Length < 14)
             {
-                displayTxtBox.Text = "";
-                newEntry = false;
-            }
+                if (newEntry || displayTxtBox.Text == "0")
+                {
+                    displayTxtBox.Text = "";
+                    newEntry = false;
+                }
 
-            if (flagFirstOperand)
-            {
-                flagSecondOperand = true;
-            }
+                if (flagFirstOperand)
+                {
+                    flagSecondOperand = true;
+                }
 
-            displayTxtBox.Text += numBtn.Text;
+                displayTxtBox.Text += numBtn.Text;
+            }
         }
 
         // Dec 6 and onwards
@@ -390,6 +404,15 @@ namespace Scientific_Calculator
         private void btnMenu_Click(object sender, EventArgs e)
         {
             timerSlidingMenu.Start();
+
+            if (isCollapsed)
+            {
+                labelCalcuMode.Visible = false;
+            } 
+            else
+            {
+                labelCalcuMode.Visible = true;
+            }
         }
 
         private void timerSlidingMenu_Tick(object sender, EventArgs e)
@@ -403,8 +426,6 @@ namespace Scientific_Calculator
                 {
                     timerSlidingMenu.Stop();
                     isCollapsed = false;
-
-                    labelCalcuMode.Visible = false;
                 }
             }
             else
@@ -414,8 +435,6 @@ namespace Scientific_Calculator
                 {
                     timerSlidingMenu.Stop();
                     isCollapsed = true;
-
-                    labelCalcuMode.Visible = true;
                 }
             }
         }
@@ -429,5 +448,7 @@ namespace Scientific_Calculator
         {
             displayTxtBox.Text = Convert.ToString(Math.Sqrt(Convert.ToDouble(displayTxtBox.Text)));
         }
+
+        
     }
 }
