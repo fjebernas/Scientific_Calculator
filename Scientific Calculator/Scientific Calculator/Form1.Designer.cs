@@ -694,6 +694,7 @@ namespace Scientific_Calculator
             this.btnFactorial.Tag = "normalBtn";
             this.btnFactorial.Text = "n!";
             this.btnFactorial.UseVisualStyleBackColor = false;
+            this.btnFactorial.Click += new System.EventHandler(this.btnFactorial_Click);
             // 
             // btnSin
             // 

@@ -449,6 +449,24 @@ namespace Scientific_Calculator
             displayTxtBox.Text = Convert.ToString(Math.Sqrt(Convert.ToDouble(displayTxtBox.Text)));
         }
 
-        
+        private void btnFactorial_Click(object sender, EventArgs e)
+        {
+            if (!displayTxtBox.Text.Contains("."))
+            {
+                double result = 1;
+
+                for (double i = Convert.ToDouble(displayTxtBox.Text); i != 1; i--)
+                {
+                    result = result * i;
+                }
+
+                displayTxtBox.Text = Convert.ToString(result);
+            }
+            else
+            {
+                MessageBox.Show("Must be a whole number");
+                displayTxtBox.Text = "0";
+            }
+        }
     }
 }
