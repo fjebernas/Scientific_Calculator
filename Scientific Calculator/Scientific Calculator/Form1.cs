@@ -22,6 +22,7 @@ namespace Scientific_Calculator
         bool newEntry = false;
         bool flagFirstOperand = false;
         bool flagSecondOperand = false;
+        bool isFinished = false;
 
         double firstOperand;
         double secondOperand;
@@ -78,11 +79,17 @@ namespace Scientific_Calculator
         private void btnCE_Click(object sender, EventArgs e)
         {
             displayTxtBox.Text = "0";
+
+            if (isFinished)
+            {
+                labelEquation.Text = "";
+            }
         }
 
         private void btnC_Click(object sender, EventArgs e)
         {
             displayTxtBox.Text = "0";
+            labelEquation.Text = "";
             firstOperand = 0;
             secondOperand = 0;
 
@@ -173,24 +180,28 @@ namespace Scientific_Calculator
         {
             OperationSetter();
             theOperator = "+";
+            labelEquation.Text = displayTxtBox.Text + " + ";
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
             OperationSetter();
             theOperator = "-";
+            labelEquation.Text = displayTxtBox.Text + " - ";
         }
 
         private void btnTimes_Click(object sender, EventArgs e)
         {
             OperationSetter();
             theOperator = "*";
+            labelEquation.Text = displayTxtBox.Text + " * ";
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
             OperationSetter();
             theOperator = "/";
+            labelEquation.Text = displayTxtBox.Text + " / ";
         }
 
         private void btnExpToY_Click(object sender, EventArgs e)
@@ -204,6 +215,7 @@ namespace Scientific_Calculator
             if (flagFirstOperand && flagSecondOperand)
             {
                 secondOperand = Convert.ToDouble(displayTxtBox.Text);
+                labelEquation.Text = labelEquation.Text + Convert.ToString(secondOperand) + " =";
 
                 switch (theOperator)
                 {
@@ -239,6 +251,7 @@ namespace Scientific_Calculator
 
                 flagFirstOperand = false;
                 flagSecondOperand = false;
+                isFinished = true;
             }
         }
 
@@ -255,6 +268,13 @@ namespace Scientific_Calculator
         private void btnNum_Click(object sender, EventArgs e)
         {
             Button numBtn = (Button)sender;
+
+            if (isFinished)
+            {
+                displayTxtBox.Text = "0";
+                labelEquation.Text = "";
+                isFinished = false;
+            }
 
             if (displayTxtBox.Text.Length < 14)
             {

@@ -105,6 +105,7 @@ namespace Scientific_Calculator
             this.btnMenu2 = new System.Windows.Forms.Button();
             this.btnMenu1 = new System.Windows.Forms.Button();
             this.timerSlidingMenu = new System.Windows.Forms.Timer(this.components);
+            this.labelEquation = new System.Windows.Forms.Label();
             this.panelDropDown2.SuspendLayout();
             this.panelDropDown1.SuspendLayout();
             this.panelSlidingMenu.SuspendLayout();
@@ -1369,12 +1370,25 @@ namespace Scientific_Calculator
             this.timerSlidingMenu.Interval = 1;
             this.timerSlidingMenu.Tick += new System.EventHandler(this.timerSlidingMenu_Tick);
             // 
+            // labelEquation
+            // 
+            this.labelEquation.AutoSize = true;
+            this.labelEquation.Dock = System.Windows.Forms.DockStyle.Right;
+            this.labelEquation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEquation.ForeColor = System.Drawing.Color.White;
+            this.labelEquation.Location = new System.Drawing.Point(386, 0);
+            this.labelEquation.Name = "labelEquation";
+            this.labelEquation.Padding = new System.Windows.Forms.Padding(0, 35, 20, 0);
+            this.labelEquation.Size = new System.Drawing.Size(20, 56);
+            this.labelEquation.TabIndex = 10;
+            // 
             // sciCal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(406, 573);
+            this.Controls.Add(this.labelEquation);
             this.Controls.Add(this.panelSlidingMenu);
             this.Controls.Add(this.panelDropDown2);
             this.Controls.Add(this.panelDropDown1);
@@ -1524,6 +1538,7 @@ namespace Scientific_Calculator
         private System.Windows.Forms.Timer timerSlidingMenu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelEquation;
     }
 }
 
