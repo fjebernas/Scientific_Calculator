@@ -270,7 +270,7 @@ namespace Scientific_Calculator
             this.btnDivide.Tag = "normalBtn";
             this.btnDivide.Text = "/";
             this.btnDivide.UseVisualStyleBackColor = false;
-            this.btnDivide.Click += new System.EventHandler(this.btnDivide_Click);
+            this.btnDivide.Click += new System.EventHandler(this.btnOperator_Click);
             // 
             // btn6
             // 
@@ -306,7 +306,7 @@ namespace Scientific_Calculator
             this.btnTimes.Tag = "normalBtn";
             this.btnTimes.Text = "*";
             this.btnTimes.UseVisualStyleBackColor = false;
-            this.btnTimes.Click += new System.EventHandler(this.btnTimes_Click);
+            this.btnTimes.Click += new System.EventHandler(this.btnOperator_Click);
             // 
             // btnOneOverX
             // 
@@ -376,7 +376,7 @@ namespace Scientific_Calculator
             this.btnMinus.Tag = "normalBtn";
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = false;
-            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
+            this.btnMinus.Click += new System.EventHandler(this.btnOperator_Click);
             // 
             // btnDecimalPoint
             // 
@@ -412,7 +412,7 @@ namespace Scientific_Calculator
             this.btnPlus.Tag = "normalBtn";
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = false;
-            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
+            this.btnPlus.Click += new System.EventHandler(this.btnOperator_Click);
             // 
             // btnMR
             // 

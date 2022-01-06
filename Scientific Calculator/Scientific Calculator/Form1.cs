@@ -23,6 +23,7 @@ namespace Scientific_Calculator
         bool flagFirstOperand = false;
         bool flagSecondOperand = false;
         bool isFinished = false;
+        bool isDoingAnother = false;
 
         double firstOperand;
         double secondOperand;
@@ -114,6 +115,12 @@ namespace Scientific_Calculator
             displayTxtBox.Text = Convert.ToString(Convert.ToDouble(displayTxtBox.Text) * Convert.ToDouble(displayTxtBox.Text));
         }
 
+        private void btnExpToY_Click(object sender, EventArgs e)
+        {
+            OperationSetter();
+            theOperator = "x raised to y";
+        }
+
         private void btnCubed_Click(object sender, EventArgs e)
         {
             displayTxtBox.Text = Convert.ToString(Convert.ToDouble(displayTxtBox.Text) * Convert.ToDouble(displayTxtBox.Text) * Convert.ToDouble(displayTxtBox.Text));
@@ -176,39 +183,66 @@ namespace Scientific_Calculator
         }
 
         //Operators
-        private void btnPlus_Click(object sender, EventArgs e)
+        private void btnOperator_Click(object sender, EventArgs e)
         {
-            OperationSetter();
-            theOperator = "+";
-            labelEquation.Text = displayTxtBox.Text + " + ";
+            Button button = (Button)sender;
+
+            if (flagFirstOperand && flagSecondOperand)
+            {
+                btnEquals.PerformClick();
+                OperationSetter();
+                theOperator = button.Text;
+                labelEquation.Text = displayTxtBox.Text + " " + theOperator + " ";
+            } 
+            else
+            {
+                OperationSetter();
+                
+                theOperator = button.Text;
+                labelEquation.Text = displayTxtBox.Text + " " + theOperator + " ";
+            }
+
+            if (isFinished)
+            {
+                isDoingAnother = true;
+            }
+        }
+        private void OperationSetter()
+        {
+            firstOperand = Convert.ToDouble(displayTxtBox.Text);
+
+            flagFirstOperand = true;
+            newEntry = true;
         }
 
-        private void btnMinus_Click(object sender, EventArgs e)
+        private void btnNum_Click(object sender, EventArgs e)
         {
-            OperationSetter();
-            theOperator = "-";
-            labelEquation.Text = displayTxtBox.Text + " - ";
+            Button numBtn = (Button)sender;
+
+            if (isFinished && !isDoingAnother)
+            {
+                displayTxtBox.Text = "0";
+                labelEquation.Text = "";
+                isFinished = false;
+            }
+
+            if (displayTxtBox.Text.Length < 14)
+            {
+                if (newEntry || displayTxtBox.Text == "0")
+                {
+                    displayTxtBox.Text = "";
+                    newEntry = false;
+                }
+
+                if (flagFirstOperand)
+                {
+                    flagSecondOperand = true;
+                }
+
+                displayTxtBox.Text += numBtn.Text;
+            }
         }
 
-        private void btnTimes_Click(object sender, EventArgs e)
-        {
-            OperationSetter();
-            theOperator = "*";
-            labelEquation.Text = displayTxtBox.Text + " * ";
-        }
-
-        private void btnDivide_Click(object sender, EventArgs e)
-        {
-            OperationSetter();
-            theOperator = "/";
-            labelEquation.Text = displayTxtBox.Text + " / ";
-        }
-
-        private void btnExpToY_Click(object sender, EventArgs e)
-        {
-            OperationSetter();
-            theOperator = "x raised to y";
-        }
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
@@ -252,46 +286,10 @@ namespace Scientific_Calculator
                 flagFirstOperand = false;
                 flagSecondOperand = false;
                 isFinished = true;
+                isDoingAnother = false;
             }
         }
 
-        
-        // Custom Functions
-        private void OperationSetter()
-        {
-            firstOperand = Convert.ToDouble(displayTxtBox.Text);
-
-            flagFirstOperand = true;
-            newEntry = true;
-        }
-
-        private void btnNum_Click(object sender, EventArgs e)
-        {
-            Button numBtn = (Button)sender;
-
-            if (isFinished)
-            {
-                displayTxtBox.Text = "0";
-                labelEquation.Text = "";
-                isFinished = false;
-            }
-
-            if (displayTxtBox.Text.Length < 14)
-            {
-                if (newEntry || displayTxtBox.Text == "0")
-                {
-                    displayTxtBox.Text = "";
-                    newEntry = false;
-                }
-
-                if (flagFirstOperand)
-                {
-                    flagSecondOperand = true;
-                }
-
-                displayTxtBox.Text += numBtn.Text;
-            }
-        }
 
         // Dec 6 and onwards
 
