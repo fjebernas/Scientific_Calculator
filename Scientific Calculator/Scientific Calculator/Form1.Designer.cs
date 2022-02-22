@@ -136,7 +136,7 @@ namespace Scientific_Calculator
             this.btnMS.FlatAppearance.BorderSize = 0;
             this.btnMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMS.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS.ForeColor = System.Drawing.Color.White;
+            this.btnMS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
             this.btnMS.Location = new System.Drawing.Point(132, 174);
             this.btnMS.Margin = new System.Windows.Forms.Padding(2);
             this.btnMS.Name = "btnMS";
@@ -154,7 +154,7 @@ namespace Scientific_Calculator
             this.btnMadd.FlatAppearance.BorderSize = 0;
             this.btnMadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMadd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMadd.ForeColor = System.Drawing.Color.White;
+            this.btnMadd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
             this.btnMadd.Location = new System.Drawing.Point(196, 174);
             this.btnMadd.Margin = new System.Windows.Forms.Padding(2);
             this.btnMadd.Name = "btnMadd";
@@ -172,7 +172,7 @@ namespace Scientific_Calculator
             this.btnMsub.FlatAppearance.BorderSize = 0;
             this.btnMsub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMsub.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMsub.ForeColor = System.Drawing.Color.White;
+            this.btnMsub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
             this.btnMsub.Location = new System.Drawing.Point(260, 174);
             this.btnMsub.Margin = new System.Windows.Forms.Padding(2);
             this.btnMsub.Name = "btnMsub";
@@ -186,7 +186,7 @@ namespace Scientific_Calculator
             // btnC
             // 
             this.btnC.AutoSize = true;
-            this.btnC.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(68)))), ((int)(((byte)(85)))));
             this.btnC.FlatAppearance.BorderSize = 0;
             this.btnC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnC.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,10 +213,12 @@ namespace Scientific_Calculator
             this.btnSign.Name = "btnSign";
             this.btnSign.Size = new System.Drawing.Size(78, 45);
             this.btnSign.TabIndex = 2;
-            this.btnSign.Tag = "";
+            this.btnSign.Tag = "numpad";
             this.btnSign.Text = "±";
             this.btnSign.UseVisualStyleBackColor = false;
             this.btnSign.Click += new System.EventHandler(this.btnSign_Click);
+            this.btnSign.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnSign.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnRadical
             // 
@@ -235,6 +237,8 @@ namespace Scientific_Calculator
             this.btnRadical.Text = "√";
             this.btnRadical.UseVisualStyleBackColor = false;
             this.btnRadical.Click += new System.EventHandler(this.btnRadical_Click);
+            this.btnRadical.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnRadical.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btn9
             // 
@@ -249,10 +253,12 @@ namespace Scientific_Calculator
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(78, 45);
             this.btn9.TabIndex = 2;
-            this.btn9.Tag = "";
+            this.btn9.Tag = "numpad";
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
             this.btn9.Click += new System.EventHandler(this.btnNum_Click);
+            this.btn9.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btn9.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnDivide
             // 
@@ -271,6 +277,8 @@ namespace Scientific_Calculator
             this.btnDivide.Text = "/";
             this.btnDivide.UseVisualStyleBackColor = false;
             this.btnDivide.Click += new System.EventHandler(this.btnOperator_Click);
+            this.btnDivide.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnDivide.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btn6
             // 
@@ -285,10 +293,12 @@ namespace Scientific_Calculator
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(78, 45);
             this.btn6.TabIndex = 2;
-            this.btn6.Tag = "";
+            this.btn6.Tag = "numpad";
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = false;
             this.btn6.Click += new System.EventHandler(this.btnNum_Click);
+            this.btn6.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btn6.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnTimes
             // 
@@ -307,6 +317,8 @@ namespace Scientific_Calculator
             this.btnTimes.Text = "*";
             this.btnTimes.UseVisualStyleBackColor = false;
             this.btnTimes.Click += new System.EventHandler(this.btnOperator_Click);
+            this.btnTimes.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnTimes.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnOneOverX
             // 
@@ -325,11 +337,13 @@ namespace Scientific_Calculator
             this.btnOneOverX.Text = "1/𝑥";
             this.btnOneOverX.UseVisualStyleBackColor = false;
             this.btnOneOverX.Click += new System.EventHandler(this.btnOneOverX_Click);
+            this.btnOneOverX.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnOneOverX.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnEquals
             // 
             this.btnEquals.AutoSize = true;
-            this.btnEquals.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnEquals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
             this.btnEquals.FlatAppearance.BorderSize = 0;
             this.btnEquals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEquals.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -338,9 +352,12 @@ namespace Scientific_Calculator
             this.btnEquals.Name = "btnEquals";
             this.btnEquals.Size = new System.Drawing.Size(78, 45);
             this.btnEquals.TabIndex = 2;
+            this.btnEquals.Tag = "equals";
             this.btnEquals.Text = "=";
             this.btnEquals.UseVisualStyleBackColor = false;
             this.btnEquals.Click += new System.EventHandler(this.btnEquals_Click);
+            this.btnEquals.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnEquals.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btn3
             // 
@@ -355,10 +372,12 @@ namespace Scientific_Calculator
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(78, 45);
             this.btn3.TabIndex = 2;
-            this.btn3.Tag = "";
+            this.btn3.Tag = "numpad";
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = false;
             this.btn3.Click += new System.EventHandler(this.btnNum_Click);
+            this.btn3.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btn3.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnMinus
             // 
@@ -377,6 +396,8 @@ namespace Scientific_Calculator
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = false;
             this.btnMinus.Click += new System.EventHandler(this.btnOperator_Click);
+            this.btnMinus.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnMinus.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnDecimalPoint
             // 
@@ -391,10 +412,12 @@ namespace Scientific_Calculator
             this.btnDecimalPoint.Name = "btnDecimalPoint";
             this.btnDecimalPoint.Size = new System.Drawing.Size(78, 45);
             this.btnDecimalPoint.TabIndex = 2;
-            this.btnDecimalPoint.Tag = "";
+            this.btnDecimalPoint.Tag = "numpad";
             this.btnDecimalPoint.Text = ".";
             this.btnDecimalPoint.UseVisualStyleBackColor = false;
             this.btnDecimalPoint.Click += new System.EventHandler(this.btnDecimalPoint_Click);
+            this.btnDecimalPoint.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnDecimalPoint.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnPlus
             // 
@@ -413,6 +436,8 @@ namespace Scientific_Calculator
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = false;
             this.btnPlus.Click += new System.EventHandler(this.btnOperator_Click);
+            this.btnPlus.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnPlus.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnMR
             // 
@@ -421,7 +446,7 @@ namespace Scientific_Calculator
             this.btnMR.FlatAppearance.BorderSize = 0;
             this.btnMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMR.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMR.ForeColor = System.Drawing.Color.White;
+            this.btnMR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
             this.btnMR.Location = new System.Drawing.Point(68, 174);
             this.btnMR.Margin = new System.Windows.Forms.Padding(2);
             this.btnMR.Name = "btnMR";
@@ -435,7 +460,7 @@ namespace Scientific_Calculator
             // btnCE
             // 
             this.btnCE.AutoSize = true;
-            this.btnCE.BackColor = System.Drawing.Color.Thistle;
+            this.btnCE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(97)))), ((int)(((byte)(70)))));
             this.btnCE.FlatAppearance.BorderSize = 0;
             this.btnCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCE.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -461,10 +486,12 @@ namespace Scientific_Calculator
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(78, 45);
             this.btn8.TabIndex = 2;
-            this.btn8.Tag = "";
+            this.btn8.Tag = "numpad";
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = false;
             this.btn8.Click += new System.EventHandler(this.btnNum_Click);
+            this.btn8.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btn8.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btn5
             // 
@@ -479,10 +506,12 @@ namespace Scientific_Calculator
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(78, 45);
             this.btn5.TabIndex = 2;
-            this.btn5.Tag = "";
+            this.btn5.Tag = "numpad";
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = false;
             this.btn5.Click += new System.EventHandler(this.btnNum_Click);
+            this.btn5.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btn5.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btn2
             // 
@@ -497,10 +526,12 @@ namespace Scientific_Calculator
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(78, 45);
             this.btn2.TabIndex = 2;
-            this.btn2.Tag = "";
+            this.btn2.Tag = "numpad";
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
             this.btn2.Click += new System.EventHandler(this.btnNum_Click);
+            this.btn2.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btn2.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btn0
             // 
@@ -515,10 +546,12 @@ namespace Scientific_Calculator
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(78, 45);
             this.btn0.TabIndex = 2;
-            this.btn0.Tag = "";
+            this.btn0.Tag = "numpad";
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
             this.btn0.Click += new System.EventHandler(this.btnNum_Click);
+            this.btn0.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btn0.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnMC
             // 
@@ -527,7 +560,7 @@ namespace Scientific_Calculator
             this.btnMC.FlatAppearance.BorderSize = 0;
             this.btnMC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMC.ForeColor = System.Drawing.Color.White;
+            this.btnMC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
             this.btnMC.Location = new System.Drawing.Point(4, 174);
             this.btnMC.Margin = new System.Windows.Forms.Padding(2);
             this.btnMC.Name = "btnMC";
@@ -555,6 +588,8 @@ namespace Scientific_Calculator
             this.btnBackspace.Text = "←";
             this.btnBackspace.UseVisualStyleBackColor = false;
             this.btnBackspace.Click += new System.EventHandler(this.btnBackspace_Click);
+            this.btnBackspace.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnBackspace.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btn7
             // 
@@ -569,10 +604,12 @@ namespace Scientific_Calculator
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(78, 45);
             this.btn7.TabIndex = 2;
-            this.btn7.Tag = "";
+            this.btn7.Tag = "numpad";
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
             this.btn7.Click += new System.EventHandler(this.btnNum_Click);
+            this.btn7.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btn7.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btn4
             // 
@@ -587,10 +624,12 @@ namespace Scientific_Calculator
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(78, 45);
             this.btn4.TabIndex = 2;
-            this.btn4.Tag = "";
+            this.btn4.Tag = "numpad";
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = false;
             this.btn4.Click += new System.EventHandler(this.btnNum_Click);
+            this.btn4.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btn4.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btn1
             // 
@@ -605,10 +644,12 @@ namespace Scientific_Calculator
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(78, 45);
             this.btn1.TabIndex = 2;
-            this.btn1.Tag = "";
+            this.btn1.Tag = "numpad";
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Click += new System.EventHandler(this.btnNum_Click);
+            this.btn1.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btn1.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnLeftParen
             // 
@@ -626,6 +667,8 @@ namespace Scientific_Calculator
             this.btnLeftParen.Tag = "normalBtn";
             this.btnLeftParen.Text = "(";
             this.btnLeftParen.UseVisualStyleBackColor = false;
+            this.btnLeftParen.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnLeftParen.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnRightParen
             // 
@@ -643,6 +686,8 @@ namespace Scientific_Calculator
             this.btnRightParen.Tag = "normalBtn";
             this.btnRightParen.Text = ")";
             this.btnRightParen.UseVisualStyleBackColor = false;
+            this.btnRightParen.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnRightParen.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnLn
             // 
@@ -660,6 +705,8 @@ namespace Scientific_Calculator
             this.btnLn.Tag = "normalBtn";
             this.btnLn.Text = "ln";
             this.btnLn.UseVisualStyleBackColor = false;
+            this.btnLn.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnLn.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnSquared
             // 
@@ -678,6 +725,8 @@ namespace Scientific_Calculator
             this.btnSquared.Text = "𝑥²";
             this.btnSquared.UseVisualStyleBackColor = false;
             this.btnSquared.Click += new System.EventHandler(this.btnSquared_Click);
+            this.btnSquared.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnSquared.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnFactorial
             // 
@@ -696,6 +745,8 @@ namespace Scientific_Calculator
             this.btnFactorial.Text = "n!";
             this.btnFactorial.UseVisualStyleBackColor = false;
             this.btnFactorial.Click += new System.EventHandler(this.btnFactorial_Click);
+            this.btnFactorial.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnFactorial.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnSin
             // 
@@ -749,6 +800,8 @@ namespace Scientific_Calculator
             this.btnExpToY.Text = "𝑥ʸ";
             this.btnExpToY.UseVisualStyleBackColor = false;
             this.btnExpToY.Click += new System.EventHandler(this.btnExpToY_Click);
+            this.btnExpToY.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnExpToY.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnAbs
             // 
@@ -767,6 +820,8 @@ namespace Scientific_Calculator
             this.btnAbs.Text = "|𝑥|";
             this.btnAbs.UseVisualStyleBackColor = false;
             this.btnAbs.Click += new System.EventHandler(this.btnAbs_Click);
+            this.btnAbs.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnAbs.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnCos
             // 
@@ -819,6 +874,8 @@ namespace Scientific_Calculator
             this.btnShift.Tag = "normalBtn";
             this.btnShift.Text = "2nd";
             this.btnShift.UseVisualStyleBackColor = false;
+            this.btnShift.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnShift.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnTan
             // 
@@ -871,6 +928,8 @@ namespace Scientific_Calculator
             this.btnLog.Tag = "normalBtn";
             this.btnLog.Text = "log";
             this.btnLog.UseVisualStyleBackColor = false;
+            this.btnLog.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnLog.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnTenRaisedToX
             // 
@@ -888,6 +947,8 @@ namespace Scientific_Calculator
             this.btnTenRaisedToX.Tag = "normalBtn";
             this.btnTenRaisedToX.Text = "10ˣ";
             this.btnTenRaisedToX.UseVisualStyleBackColor = false;
+            this.btnTenRaisedToX.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnTenRaisedToX.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnMod
             // 
@@ -905,6 +966,8 @@ namespace Scientific_Calculator
             this.btnMod.Tag = "normalBtn";
             this.btnMod.Text = "mod";
             this.btnMod.UseVisualStyleBackColor = false;
+            this.btnMod.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnMod.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnExp
             // 
@@ -922,6 +985,8 @@ namespace Scientific_Calculator
             this.btnExp.Tag = "normalBtn";
             this.btnExp.Text = "exp";
             this.btnExp.UseVisualStyleBackColor = false;
+            this.btnExp.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnExp.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // radioDegrees
             // 
@@ -1007,6 +1072,8 @@ namespace Scientific_Calculator
             this.btnPi.Text = "π";
             this.btnPi.UseVisualStyleBackColor = false;
             this.btnPi.Click += new System.EventHandler(this.btnPi_Click);
+            this.btnPi.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnPi.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnFE
             // 
@@ -1015,7 +1082,7 @@ namespace Scientific_Calculator
             this.btnFE.FlatAppearance.BorderSize = 0;
             this.btnFE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFE.ForeColor = System.Drawing.Color.White;
+            this.btnFE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
             this.btnFE.Location = new System.Drawing.Point(68, 140);
             this.btnFE.Margin = new System.Windows.Forms.Padding(2);
             this.btnFE.Name = "btnFE";
@@ -1066,7 +1133,7 @@ namespace Scientific_Calculator
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
             this.button1.Location = new System.Drawing.Point(4, 140);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
@@ -1083,7 +1150,7 @@ namespace Scientific_Calculator
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
             this.button2.Location = new System.Drawing.Point(324, 174);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";

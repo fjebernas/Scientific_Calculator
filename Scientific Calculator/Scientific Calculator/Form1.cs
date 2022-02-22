@@ -13,7 +13,7 @@ namespace Scientific_Calculator
     public partial class sciCal : Form
     {
         Color normalButtonsColor = ColorTranslator.FromHtml("#1A1919");
-        Color formBackColor = ColorTranslator.FromHtml("#2B2929");
+        Color formBackColor = ColorTranslator.FromHtml("#2A262E");
 
         private bool isCollapsed;
         private bool isPanel1Showing = false;
@@ -482,8 +482,50 @@ namespace Scientific_Calculator
             }
             else
             {
+                //displayTxtBox.Font = new Font(displayTxtBox.Font.FontFamily, 20);
+                //displayTxtBox.Text = "Must be a whole number";
+                //displayTxtBox.Font = new Font(displayTxtBox.Font.FontFamily, 32);
+
                 MessageBox.Show("Must be a whole number");
                 displayTxtBox.Text = "0";
+            }
+        }
+
+        private void btn_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+
+            if (button.Tag == "numpad")
+            {
+                button.BackColor = ColorTranslator.FromHtml("#476384");
+            } 
+            else if (button.Tag == "normalBtn")
+            {
+                button.BackColor = ColorTranslator.FromHtml("#312C48");
+            } 
+            else if (button.Tag == "equals")
+            {
+                button.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                button.Font = new Font(button.Font.FontFamily, 17);
+            }
+        }
+
+        private void btn_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+
+            if (button.Tag == "numpad")
+            {
+                button.BackColor = ColorTranslator.FromHtml("#000000");
+            } 
+            else if (button.Tag == "normalBtn")
+            {
+                button.BackColor = normalButtonsColor;
+            }
+            else if (button.Tag == "equals")
+            {
+                button.BackColor = ColorTranslator.FromHtml("#D1C6BA");
+                button.Font = new Font(button.Font.FontFamily, 13);
             }
         }
     }
