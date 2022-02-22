@@ -234,7 +234,7 @@ namespace Scientific_Calculator
             this.btnRadical.Size = new System.Drawing.Size(78, 45);
             this.btnRadical.TabIndex = 2;
             this.btnRadical.Tag = "normalBtn";
-            this.btnRadical.Text = "√";
+            this.btnRadical.Text = "√𝑥";
             this.btnRadical.UseVisualStyleBackColor = false;
             this.btnRadical.Click += new System.EventHandler(this.btnRadical_Click);
             this.btnRadical.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
@@ -872,8 +872,9 @@ namespace Scientific_Calculator
             this.btnShift.Size = new System.Drawing.Size(78, 45);
             this.btnShift.TabIndex = 2;
             this.btnShift.Tag = "normalBtn";
-            this.btnShift.Text = "2nd";
+            this.btnShift.Text = "2ⁿᵈ";
             this.btnShift.UseVisualStyleBackColor = false;
+            this.btnShift.Click += new System.EventHandler(this.btnShift_Click);
             this.btnShift.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.btnShift.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
@@ -928,6 +929,7 @@ namespace Scientific_Calculator
             this.btnLog.Tag = "normalBtn";
             this.btnLog.Text = "log";
             this.btnLog.UseVisualStyleBackColor = false;
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             this.btnLog.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.btnLog.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
@@ -947,6 +949,7 @@ namespace Scientific_Calculator
             this.btnTenRaisedToX.Tag = "normalBtn";
             this.btnTenRaisedToX.Text = "10ˣ";
             this.btnTenRaisedToX.UseVisualStyleBackColor = false;
+            this.btnTenRaisedToX.Click += new System.EventHandler(this.btnTenRaisedToX_Click);
             this.btnTenRaisedToX.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.btnTenRaisedToX.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
@@ -985,6 +988,7 @@ namespace Scientific_Calculator
             this.btnExp.Tag = "normalBtn";
             this.btnExp.Text = "exp";
             this.btnExp.UseVisualStyleBackColor = false;
+            this.btnExp.Click += new System.EventHandler(this.btnExp_Click);
             this.btnExp.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.btnExp.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
@@ -1091,6 +1095,7 @@ namespace Scientific_Calculator
             this.btnFE.Tag = "ColorThisFormBackColor";
             this.btnFE.Text = "F-E";
             this.btnFE.UseVisualStyleBackColor = false;
+            this.btnFE.Click += new System.EventHandler(this.btnFE_Click);
             // 
             // btnModeDropdown
             // 
@@ -1515,7 +1520,6 @@ namespace Scientific_Calculator
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
             this.Text = "Scientific Calculator";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.sciCal_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sciCal_KeyDown);
             this.panelDropDown2.ResumeLayout(false);

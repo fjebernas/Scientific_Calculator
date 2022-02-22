@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,8 @@ namespace Scientific_Calculator
         bool flagSecondOperand = false;
         bool isFinished = false;
         bool isDoingAnother = false;
+        bool isDoingXraisedtoY = false;
+        bool isFirstset = true;
 
         double firstOperand;
         double secondOperand;
@@ -119,6 +122,7 @@ namespace Scientific_Calculator
         {
             OperationSetter();
             theOperator = "x raised to y";
+            isDoingXraisedtoY = true;
         }
 
         private void btnCubed_Click(object sender, EventArgs e)
@@ -209,10 +213,10 @@ namespace Scientific_Calculator
         }
         private void OperationSetter()
         {
-            firstOperand = Convert.ToDouble(displayTxtBox.Text);
+                firstOperand = Convert.ToDouble(displayTxtBox.Text);
 
-            flagFirstOperand = true;
-            newEntry = true;
+                flagFirstOperand = true;
+                newEntry = true;
         }
 
         private void btnNum_Click(object sender, EventArgs e)
@@ -249,7 +253,17 @@ namespace Scientific_Calculator
             if (flagFirstOperand && flagSecondOperand)
             {
                 secondOperand = Convert.ToDouble(displayTxtBox.Text);
-                labelEquation.Text = labelEquation.Text + Convert.ToString(secondOperand) + " =";
+
+                if (isDoingXraisedtoY)
+                {
+                    labelEquation.Text = Convert.ToString(firstOperand) + " raised to " + Convert.ToString(secondOperand) + " is";
+                    isDoingXraisedtoY = false;
+                } 
+                else
+                {
+                    labelEquation.Text = labelEquation.Text + Convert.ToString(secondOperand) + " =";
+                }
+                
 
                 switch (theOperator)
                 {
@@ -527,6 +541,54 @@ namespace Scientific_Calculator
                 button.BackColor = ColorTranslator.FromHtml("#D1C6BA");
                 button.Font = new Font(button.Font.FontFamily, 13);
             }
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Convert.ToString(Math.Log10(Convert.ToDouble(displayTxtBox.Text)));
+        }
+
+        private void btnTenRaisedToX_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Convert.ToString(Math.Pow(10, Convert.ToDouble(displayTxtBox.Text)));
+        }
+
+        private void btnExp_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Convert.ToString(Math.Exp(Convert.ToDouble(displayTxtBox.Text)));
+        }
+
+        private void btnFE_Click(object sender, EventArgs e)
+        {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+            displayTxtBox.Text = num.ToString("G2", CultureInfo.InvariantCulture);
+        }
+
+        private void btnShift_Click(object sender, EventArgs e)
+        {
+            if (isFirstset)
+            {
+                btnSquared.Text = "𝑥³";
+                btnRadical.Text = "∛𝑥";
+                btnExpToY.Text = "ʸ√𝑥";
+                btnTenRaisedToX.Text = "2ˣ";
+                btnLog.Text = "logᵧ𝑥";
+                btnLn.Text = "eˣ";
+
+                isFirstset = false;
+            } 
+            else if (!isFirstset)
+            {
+                btnSquared.Text = "𝑥²";
+                btnRadical.Text = "√𝑥";
+                btnExpToY.Text = "𝑥ʸ";
+                btnTenRaisedToX.Text = "10ˣ";
+                btnLog.Text = "log";
+                btnLn.Text = "ln";
+
+                isFirstset = true;
+            }
+           
         }
     }
 }
