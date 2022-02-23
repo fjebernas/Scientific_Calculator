@@ -13,6 +13,10 @@ namespace Scientific_Calculator
 {
     public partial class sciCal : Form
     {
+        Image menuImage = Properties.Resources.menu;
+        Image cancelImage = Properties.Resources.cancel;
+        
+
         Color normalButtonsColor = ColorTranslator.FromHtml("#1A1919");
         Color formBackColor = ColorTranslator.FromHtml("#2A262E");
 
@@ -28,6 +32,7 @@ namespace Scientific_Calculator
         bool isDoingXraisedtoY = false;
         bool isDoingXrootofY = false;
         bool isDoingCustomlog = false;
+        bool isDoingModulus = false;
         bool isFirstset = true;
 
         double firstOperand;
@@ -50,12 +55,13 @@ namespace Scientific_Calculator
             
             panelSlidingMenu.BackColor = formBackColor;
             List<Button> MenuButtons = new List<Button> {
-            btnMenu1, btnMenu2, btnMenu3, btnMenu4, btnMenu5, btnMenu6, btnMenu7, btnMenu8, btnMenu9, btnMenu10, btnMenu11, btnMenu12 };
+            btnMenu1, btnMenu2, btnMenu3, btnMenu4, btnMenu5, btnMenu6, btnMenu7, btnMenu8, btnMenu9, btnMenu10, btnMenu11};
 
             foreach (Button x in MenuButtons)
             {
                 x.BackColor = formBackColor;
             }
+
 
             panelDropDown2.BackColor = normalButtonsColor;
             btnSin.BackColor = normalButtonsColor;
@@ -288,6 +294,11 @@ namespace Scientific_Calculator
                     labelEquation.Text = Convert.ToString(firstOperand) + " log base " + Convert.ToString(secondOperand) + " =";
                     isDoingXrootofY = false;
                 }
+                else if (isDoingModulus)
+                {
+                    labelEquation.Text = Convert.ToString(firstOperand) + " modulus " + Convert.ToString(secondOperand) + " =";
+                    isDoingModulus = false;
+                }
                 else
                 {
                     labelEquation.Text = labelEquation.Text + Convert.ToString(secondOperand) + " =";
@@ -331,6 +342,11 @@ namespace Scientific_Calculator
                         displayTxtBox.Text = Convert.ToString(result);
                         break;
 
+                    case "modulus":
+                        result = firstOperand % secondOperand;
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
+
                     default:
                         displayTxtBox.Text = displayTxtBox.Text;
                         break;
@@ -349,13 +365,13 @@ namespace Scientific_Calculator
         private void btnSin_Click(object sender, EventArgs e)
         {
             double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
-            displayTxtBox.Text = Convert.ToString(Math.Sin(degrees));
+            displayTxtBox.Text = Math.Sin(degrees).ToString("N5");
         }
 
         private void btnCos_Click(object sender, EventArgs e)
         {
             double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
-            displayTxtBox.Text = Convert.ToString(Math.Cos(degrees));
+            displayTxtBox.Text = Math.Cos(degrees).ToString("N5");
         }
 
         private void btnAbs_Click(object sender, EventArgs e)
@@ -368,7 +384,7 @@ namespace Scientific_Calculator
         private void btnTan_Click(object sender, EventArgs e)
         {
             double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
-            displayTxtBox.Text = Convert.ToString(Math.Tan(degrees));
+            displayTxtBox.Text = Math.Tan(degrees).ToString("N5");
         }
 
         //drop down panel functions
@@ -478,10 +494,12 @@ namespace Scientific_Calculator
 
             if (isCollapsed)
             {
+                btnMenu.Image = cancelImage;
                 labelCalcuMode.Visible = false;
             } 
             else
             {
+                btnMenu.Image = menuImage;
                 labelCalcuMode.Visible = true;
             }
         }
@@ -667,6 +685,39 @@ namespace Scientific_Calculator
                 displayTxtBox.Text = Convert.ToString(Math.Pow(Math.E, Convert.ToDouble(displayTxtBox.Text)));
             }
             
+        }
+
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+            OperationSetter();
+            theOperator = "modulus";
+            isDoingModulus = true;
+        }
+
+        private void btnSinh_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Math.Sinh(Convert.ToDouble(displayTxtBox.Text)).ToString();
+        }
+
+        private void btnCosh_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Math.Cosh(Convert.ToDouble(displayTxtBox.Text)).ToString();
+        }
+
+        private void btnTanh_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Math.Tanh(Convert.ToDouble(displayTxtBox.Text)).ToString();
+        }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            displayTxtBox.Text = rnd.Next(1, 101).ToString();
+        }
+
+        private void btnE_Click(object sender, EventArgs e)
+        {
+            displayTxtBox.Text = Math.E.ToString();
         }
     }
 }

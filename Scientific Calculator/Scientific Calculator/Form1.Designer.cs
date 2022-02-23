@@ -30,6 +30,7 @@ namespace Scientific_Calculator
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sciCal));
             this.displayTxtBox = new System.Windows.Forms.TextBox();
             this.btnMS = new System.Windows.Forms.Button();
             this.btnMadd = new System.Windows.Forms.Button();
@@ -58,8 +59,8 @@ namespace Scientific_Calculator
             this.btn7 = new System.Windows.Forms.Button();
             this.btn4 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
-            this.btnLeftParen = new System.Windows.Forms.Button();
-            this.btnRightParen = new System.Windows.Forms.Button();
+            this.btnE = new System.Windows.Forms.Button();
+            this.btnFtoE = new System.Windows.Forms.Button();
             this.btnLn = new System.Windows.Forms.Button();
             this.btnSquared = new System.Windows.Forms.Button();
             this.btnFactorial = new System.Windows.Forms.Button();
@@ -79,20 +80,14 @@ namespace Scientific_Calculator
             this.radioDegrees = new System.Windows.Forms.RadioButton();
             this.radioRadians = new System.Windows.Forms.RadioButton();
             this.radioGrads = new System.Windows.Forms.RadioButton();
-            this.btnTrigoDropdown = new System.Windows.Forms.Button();
             this.btnPi = new System.Windows.Forms.Button();
-            this.btnFE = new System.Windows.Forms.Button();
-            this.btnModeDropdown = new System.Windows.Forms.Button();
             this.panelDropDown2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRandom = new System.Windows.Forms.Button();
             this.labelCalcuMode = new System.Windows.Forms.Label();
             this.panelDropDown1 = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.panelSlidingMenu = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnMenu12 = new System.Windows.Forms.Button();
             this.btnMenu11 = new System.Windows.Forms.Button();
             this.btnMenu10 = new System.Windows.Forms.Button();
             this.btnMenu9 = new System.Windows.Forms.Button();
@@ -106,6 +101,9 @@ namespace Scientific_Calculator
             this.btnMenu1 = new System.Windows.Forms.Button();
             this.timerSlidingMenu = new System.Windows.Forms.Timer(this.components);
             this.labelEquation = new System.Windows.Forms.Label();
+            this.btnModeDropdown = new System.Windows.Forms.Button();
+            this.btnTrigoDropdown = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.panelDropDown2.SuspendLayout();
             this.panelDropDown1.SuspendLayout();
             this.panelSlidingMenu.SuspendLayout();
@@ -137,7 +135,7 @@ namespace Scientific_Calculator
             this.btnMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMS.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
-            this.btnMS.Location = new System.Drawing.Point(132, 174);
+            this.btnMS.Location = new System.Drawing.Point(207, 147);
             this.btnMS.Margin = new System.Windows.Forms.Padding(2);
             this.btnMS.Name = "btnMS";
             this.btnMS.Size = new System.Drawing.Size(60, 30);
@@ -155,7 +153,7 @@ namespace Scientific_Calculator
             this.btnMadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMadd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMadd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
-            this.btnMadd.Location = new System.Drawing.Point(196, 174);
+            this.btnMadd.Location = new System.Drawing.Point(274, 147);
             this.btnMadd.Margin = new System.Windows.Forms.Padding(2);
             this.btnMadd.Name = "btnMadd";
             this.btnMadd.Size = new System.Drawing.Size(60, 30);
@@ -173,7 +171,7 @@ namespace Scientific_Calculator
             this.btnMsub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMsub.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMsub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
-            this.btnMsub.Location = new System.Drawing.Point(260, 174);
+            this.btnMsub.Location = new System.Drawing.Point(341, 147);
             this.btnMsub.Margin = new System.Windows.Forms.Padding(2);
             this.btnMsub.Name = "btnMsub";
             this.btnMsub.Size = new System.Drawing.Size(60, 30);
@@ -191,7 +189,7 @@ namespace Scientific_Calculator
             this.btnC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnC.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC.ForeColor = System.Drawing.Color.White;
-            this.btnC.Location = new System.Drawing.Point(244, 244);
+            this.btnC.Location = new System.Drawing.Point(244, 217);
             this.btnC.Margin = new System.Windows.Forms.Padding(2);
             this.btnC.Name = "btnC";
             this.btnC.Size = new System.Drawing.Size(78, 45);
@@ -208,7 +206,7 @@ namespace Scientific_Calculator
             this.btnSign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSign.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSign.ForeColor = System.Drawing.Color.White;
-            this.btnSign.Location = new System.Drawing.Point(84, 526);
+            this.btnSign.Location = new System.Drawing.Point(84, 499);
             this.btnSign.Margin = new System.Windows.Forms.Padding(2);
             this.btnSign.Name = "btnSign";
             this.btnSign.Size = new System.Drawing.Size(78, 45);
@@ -228,7 +226,7 @@ namespace Scientific_Calculator
             this.btnRadical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRadical.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRadical.ForeColor = System.Drawing.Color.White;
-            this.btnRadical.Location = new System.Drawing.Point(4, 338);
+            this.btnRadical.Location = new System.Drawing.Point(4, 311);
             this.btnRadical.Margin = new System.Windows.Forms.Padding(2);
             this.btnRadical.Name = "btnRadical";
             this.btnRadical.Size = new System.Drawing.Size(78, 45);
@@ -248,7 +246,7 @@ namespace Scientific_Calculator
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.ForeColor = System.Drawing.Color.White;
-            this.btn9.Location = new System.Drawing.Point(244, 385);
+            this.btn9.Location = new System.Drawing.Point(244, 358);
             this.btn9.Margin = new System.Windows.Forms.Padding(2);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(78, 45);
@@ -268,7 +266,7 @@ namespace Scientific_Calculator
             this.btnDivide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDivide.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDivide.ForeColor = System.Drawing.Color.White;
-            this.btnDivide.Location = new System.Drawing.Point(324, 338);
+            this.btnDivide.Location = new System.Drawing.Point(324, 311);
             this.btnDivide.Margin = new System.Windows.Forms.Padding(2);
             this.btnDivide.Name = "btnDivide";
             this.btnDivide.Size = new System.Drawing.Size(78, 45);
@@ -288,7 +286,7 @@ namespace Scientific_Calculator
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.ForeColor = System.Drawing.Color.White;
-            this.btn6.Location = new System.Drawing.Point(244, 432);
+            this.btn6.Location = new System.Drawing.Point(244, 405);
             this.btn6.Margin = new System.Windows.Forms.Padding(2);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(78, 45);
@@ -308,7 +306,7 @@ namespace Scientific_Calculator
             this.btnTimes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimes.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimes.ForeColor = System.Drawing.Color.White;
-            this.btnTimes.Location = new System.Drawing.Point(324, 385);
+            this.btnTimes.Location = new System.Drawing.Point(324, 358);
             this.btnTimes.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimes.Name = "btnTimes";
             this.btnTimes.Size = new System.Drawing.Size(78, 45);
@@ -328,7 +326,7 @@ namespace Scientific_Calculator
             this.btnOneOverX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOneOverX.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOneOverX.ForeColor = System.Drawing.Color.White;
-            this.btnOneOverX.Location = new System.Drawing.Point(84, 291);
+            this.btnOneOverX.Location = new System.Drawing.Point(84, 264);
             this.btnOneOverX.Margin = new System.Windows.Forms.Padding(2);
             this.btnOneOverX.Name = "btnOneOverX";
             this.btnOneOverX.Size = new System.Drawing.Size(78, 45);
@@ -347,7 +345,7 @@ namespace Scientific_Calculator
             this.btnEquals.FlatAppearance.BorderSize = 0;
             this.btnEquals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEquals.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEquals.Location = new System.Drawing.Point(324, 526);
+            this.btnEquals.Location = new System.Drawing.Point(324, 499);
             this.btnEquals.Margin = new System.Windows.Forms.Padding(2);
             this.btnEquals.Name = "btnEquals";
             this.btnEquals.Size = new System.Drawing.Size(78, 45);
@@ -367,7 +365,7 @@ namespace Scientific_Calculator
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.White;
-            this.btn3.Location = new System.Drawing.Point(244, 479);
+            this.btn3.Location = new System.Drawing.Point(244, 452);
             this.btn3.Margin = new System.Windows.Forms.Padding(2);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(78, 45);
@@ -387,7 +385,7 @@ namespace Scientific_Calculator
             this.btnMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinus.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinus.ForeColor = System.Drawing.Color.White;
-            this.btnMinus.Location = new System.Drawing.Point(324, 432);
+            this.btnMinus.Location = new System.Drawing.Point(324, 405);
             this.btnMinus.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(78, 45);
@@ -407,7 +405,7 @@ namespace Scientific_Calculator
             this.btnDecimalPoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecimalPoint.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecimalPoint.ForeColor = System.Drawing.Color.White;
-            this.btnDecimalPoint.Location = new System.Drawing.Point(244, 526);
+            this.btnDecimalPoint.Location = new System.Drawing.Point(244, 499);
             this.btnDecimalPoint.Margin = new System.Windows.Forms.Padding(2);
             this.btnDecimalPoint.Name = "btnDecimalPoint";
             this.btnDecimalPoint.Size = new System.Drawing.Size(78, 45);
@@ -427,7 +425,7 @@ namespace Scientific_Calculator
             this.btnPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlus.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlus.ForeColor = System.Drawing.Color.White;
-            this.btnPlus.Location = new System.Drawing.Point(324, 479);
+            this.btnPlus.Location = new System.Drawing.Point(324, 452);
             this.btnPlus.Margin = new System.Windows.Forms.Padding(2);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(78, 45);
@@ -447,7 +445,7 @@ namespace Scientific_Calculator
             this.btnMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMR.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
-            this.btnMR.Location = new System.Drawing.Point(68, 174);
+            this.btnMR.Location = new System.Drawing.Point(140, 147);
             this.btnMR.Margin = new System.Windows.Forms.Padding(2);
             this.btnMR.Name = "btnMR";
             this.btnMR.Size = new System.Drawing.Size(60, 30);
@@ -464,7 +462,7 @@ namespace Scientific_Calculator
             this.btnCE.FlatAppearance.BorderSize = 0;
             this.btnCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCE.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCE.Location = new System.Drawing.Point(164, 244);
+            this.btnCE.Location = new System.Drawing.Point(164, 217);
             this.btnCE.Margin = new System.Windows.Forms.Padding(2);
             this.btnCE.Name = "btnCE";
             this.btnCE.Size = new System.Drawing.Size(78, 45);
@@ -481,7 +479,7 @@ namespace Scientific_Calculator
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.ForeColor = System.Drawing.Color.White;
-            this.btn8.Location = new System.Drawing.Point(164, 385);
+            this.btn8.Location = new System.Drawing.Point(164, 358);
             this.btn8.Margin = new System.Windows.Forms.Padding(2);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(78, 45);
@@ -501,7 +499,7 @@ namespace Scientific_Calculator
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.ForeColor = System.Drawing.Color.White;
-            this.btn5.Location = new System.Drawing.Point(164, 432);
+            this.btn5.Location = new System.Drawing.Point(164, 405);
             this.btn5.Margin = new System.Windows.Forms.Padding(2);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(78, 45);
@@ -521,7 +519,7 @@ namespace Scientific_Calculator
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.White;
-            this.btn2.Location = new System.Drawing.Point(164, 479);
+            this.btn2.Location = new System.Drawing.Point(164, 452);
             this.btn2.Margin = new System.Windows.Forms.Padding(2);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(78, 45);
@@ -541,7 +539,7 @@ namespace Scientific_Calculator
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.ForeColor = System.Drawing.Color.White;
-            this.btn0.Location = new System.Drawing.Point(164, 526);
+            this.btn0.Location = new System.Drawing.Point(164, 499);
             this.btn0.Margin = new System.Windows.Forms.Padding(2);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(78, 45);
@@ -561,7 +559,7 @@ namespace Scientific_Calculator
             this.btnMC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
-            this.btnMC.Location = new System.Drawing.Point(4, 174);
+            this.btnMC.Location = new System.Drawing.Point(73, 147);
             this.btnMC.Margin = new System.Windows.Forms.Padding(2);
             this.btnMC.Name = "btnMC";
             this.btnMC.Size = new System.Drawing.Size(60, 30);
@@ -579,7 +577,7 @@ namespace Scientific_Calculator
             this.btnBackspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackspace.ForeColor = System.Drawing.Color.White;
-            this.btnBackspace.Location = new System.Drawing.Point(324, 244);
+            this.btnBackspace.Location = new System.Drawing.Point(324, 217);
             this.btnBackspace.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackspace.Name = "btnBackspace";
             this.btnBackspace.Size = new System.Drawing.Size(78, 45);
@@ -599,7 +597,7 @@ namespace Scientific_Calculator
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.ForeColor = System.Drawing.Color.White;
-            this.btn7.Location = new System.Drawing.Point(84, 385);
+            this.btn7.Location = new System.Drawing.Point(84, 358);
             this.btn7.Margin = new System.Windows.Forms.Padding(2);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(78, 45);
@@ -619,7 +617,7 @@ namespace Scientific_Calculator
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.White;
-            this.btn4.Location = new System.Drawing.Point(84, 432);
+            this.btn4.Location = new System.Drawing.Point(84, 405);
             this.btn4.Margin = new System.Windows.Forms.Padding(2);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(78, 45);
@@ -639,7 +637,7 @@ namespace Scientific_Calculator
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.Color.White;
-            this.btn1.Location = new System.Drawing.Point(84, 479);
+            this.btn1.Location = new System.Drawing.Point(84, 452);
             this.btn1.Margin = new System.Windows.Forms.Padding(2);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(78, 45);
@@ -651,43 +649,45 @@ namespace Scientific_Calculator
             this.btn1.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.btn1.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
-            // btnLeftParen
+            // btnE
             // 
-            this.btnLeftParen.AutoSize = true;
-            this.btnLeftParen.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnLeftParen.FlatAppearance.BorderSize = 0;
-            this.btnLeftParen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLeftParen.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLeftParen.ForeColor = System.Drawing.Color.White;
-            this.btnLeftParen.Location = new System.Drawing.Point(84, 338);
-            this.btnLeftParen.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLeftParen.Name = "btnLeftParen";
-            this.btnLeftParen.Size = new System.Drawing.Size(78, 45);
-            this.btnLeftParen.TabIndex = 2;
-            this.btnLeftParen.Tag = "normalBtn";
-            this.btnLeftParen.Text = "(";
-            this.btnLeftParen.UseVisualStyleBackColor = false;
-            this.btnLeftParen.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnLeftParen.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btnE.AutoSize = true;
+            this.btnE.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnE.FlatAppearance.BorderSize = 0;
+            this.btnE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnE.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnE.ForeColor = System.Drawing.Color.White;
+            this.btnE.Location = new System.Drawing.Point(84, 311);
+            this.btnE.Margin = new System.Windows.Forms.Padding(2);
+            this.btnE.Name = "btnE";
+            this.btnE.Size = new System.Drawing.Size(78, 45);
+            this.btnE.TabIndex = 2;
+            this.btnE.Tag = "normalBtn";
+            this.btnE.Text = "e";
+            this.btnE.UseVisualStyleBackColor = false;
+            this.btnE.Click += new System.EventHandler(this.btnE_Click);
+            this.btnE.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnE.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
-            // btnRightParen
+            // btnFtoE
             // 
-            this.btnRightParen.AutoSize = true;
-            this.btnRightParen.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnRightParen.FlatAppearance.BorderSize = 0;
-            this.btnRightParen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRightParen.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRightParen.ForeColor = System.Drawing.Color.White;
-            this.btnRightParen.Location = new System.Drawing.Point(164, 338);
-            this.btnRightParen.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRightParen.Name = "btnRightParen";
-            this.btnRightParen.Size = new System.Drawing.Size(78, 45);
-            this.btnRightParen.TabIndex = 2;
-            this.btnRightParen.Tag = "normalBtn";
-            this.btnRightParen.Text = ")";
-            this.btnRightParen.UseVisualStyleBackColor = false;
-            this.btnRightParen.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnRightParen.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btnFtoE.AutoSize = true;
+            this.btnFtoE.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnFtoE.FlatAppearance.BorderSize = 0;
+            this.btnFtoE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFtoE.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFtoE.ForeColor = System.Drawing.Color.White;
+            this.btnFtoE.Location = new System.Drawing.Point(84, 217);
+            this.btnFtoE.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFtoE.Name = "btnFtoE";
+            this.btnFtoE.Size = new System.Drawing.Size(78, 45);
+            this.btnFtoE.TabIndex = 2;
+            this.btnFtoE.Tag = "normalBtn";
+            this.btnFtoE.Text = "F-E";
+            this.btnFtoE.UseVisualStyleBackColor = false;
+            this.btnFtoE.Click += new System.EventHandler(this.btnFE_Click);
+            this.btnFtoE.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnFtoE.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // btnLn
             // 
@@ -697,7 +697,7 @@ namespace Scientific_Calculator
             this.btnLn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLn.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLn.ForeColor = System.Drawing.Color.White;
-            this.btnLn.Location = new System.Drawing.Point(4, 526);
+            this.btnLn.Location = new System.Drawing.Point(4, 499);
             this.btnLn.Margin = new System.Windows.Forms.Padding(2);
             this.btnLn.Name = "btnLn";
             this.btnLn.Size = new System.Drawing.Size(78, 45);
@@ -717,7 +717,7 @@ namespace Scientific_Calculator
             this.btnSquared.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSquared.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSquared.ForeColor = System.Drawing.Color.White;
-            this.btnSquared.Location = new System.Drawing.Point(4, 291);
+            this.btnSquared.Location = new System.Drawing.Point(4, 264);
             this.btnSquared.Margin = new System.Windows.Forms.Padding(2);
             this.btnSquared.Name = "btnSquared";
             this.btnSquared.Size = new System.Drawing.Size(78, 45);
@@ -737,7 +737,7 @@ namespace Scientific_Calculator
             this.btnFactorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFactorial.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFactorial.ForeColor = System.Drawing.Color.White;
-            this.btnFactorial.Location = new System.Drawing.Point(244, 338);
+            this.btnFactorial.Location = new System.Drawing.Point(244, 311);
             this.btnFactorial.Margin = new System.Windows.Forms.Padding(2);
             this.btnFactorial.Name = "btnFactorial";
             this.btnFactorial.Size = new System.Drawing.Size(78, 45);
@@ -783,6 +783,7 @@ namespace Scientific_Calculator
             this.btnSinh.Tag = "normalBtn";
             this.btnSinh.Text = "sinh";
             this.btnSinh.UseVisualStyleBackColor = false;
+            this.btnSinh.Click += new System.EventHandler(this.btnSinh_Click);
             // 
             // btnExpToY
             // 
@@ -792,7 +793,7 @@ namespace Scientific_Calculator
             this.btnExpToY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExpToY.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExpToY.ForeColor = System.Drawing.Color.White;
-            this.btnExpToY.Location = new System.Drawing.Point(4, 385);
+            this.btnExpToY.Location = new System.Drawing.Point(4, 358);
             this.btnExpToY.Margin = new System.Windows.Forms.Padding(2);
             this.btnExpToY.Name = "btnExpToY";
             this.btnExpToY.Size = new System.Drawing.Size(78, 45);
@@ -812,7 +813,7 @@ namespace Scientific_Calculator
             this.btnAbs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbs.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbs.ForeColor = System.Drawing.Color.White;
-            this.btnAbs.Location = new System.Drawing.Point(164, 291);
+            this.btnAbs.Location = new System.Drawing.Point(164, 264);
             this.btnAbs.Margin = new System.Windows.Forms.Padding(2);
             this.btnAbs.Name = "btnAbs";
             this.btnAbs.Size = new System.Drawing.Size(78, 45);
@@ -858,6 +859,7 @@ namespace Scientific_Calculator
             this.btnCosh.Tag = "normalBtn";
             this.btnCosh.Text = "cosh";
             this.btnCosh.UseVisualStyleBackColor = false;
+            this.btnCosh.Click += new System.EventHandler(this.btnCosh_Click);
             // 
             // btnShift
             // 
@@ -867,7 +869,7 @@ namespace Scientific_Calculator
             this.btnShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShift.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShift.ForeColor = System.Drawing.Color.White;
-            this.btnShift.Location = new System.Drawing.Point(4, 244);
+            this.btnShift.Location = new System.Drawing.Point(4, 217);
             this.btnShift.Margin = new System.Windows.Forms.Padding(2);
             this.btnShift.Name = "btnShift";
             this.btnShift.Size = new System.Drawing.Size(78, 45);
@@ -913,6 +915,7 @@ namespace Scientific_Calculator
             this.btnTanh.Tag = "normalBtn";
             this.btnTanh.Text = "tanh";
             this.btnTanh.UseVisualStyleBackColor = false;
+            this.btnTanh.Click += new System.EventHandler(this.btnTanh_Click);
             // 
             // btnLog
             // 
@@ -922,7 +925,7 @@ namespace Scientific_Calculator
             this.btnLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLog.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLog.ForeColor = System.Drawing.Color.White;
-            this.btnLog.Location = new System.Drawing.Point(4, 479);
+            this.btnLog.Location = new System.Drawing.Point(4, 452);
             this.btnLog.Margin = new System.Windows.Forms.Padding(2);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(78, 45);
@@ -942,7 +945,7 @@ namespace Scientific_Calculator
             this.btnTenRaisedToX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTenRaisedToX.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTenRaisedToX.ForeColor = System.Drawing.Color.White;
-            this.btnTenRaisedToX.Location = new System.Drawing.Point(4, 432);
+            this.btnTenRaisedToX.Location = new System.Drawing.Point(4, 405);
             this.btnTenRaisedToX.Margin = new System.Windows.Forms.Padding(2);
             this.btnTenRaisedToX.Name = "btnTenRaisedToX";
             this.btnTenRaisedToX.Size = new System.Drawing.Size(78, 45);
@@ -962,7 +965,7 @@ namespace Scientific_Calculator
             this.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMod.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMod.ForeColor = System.Drawing.Color.White;
-            this.btnMod.Location = new System.Drawing.Point(324, 291);
+            this.btnMod.Location = new System.Drawing.Point(324, 264);
             this.btnMod.Margin = new System.Windows.Forms.Padding(2);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(78, 45);
@@ -970,6 +973,7 @@ namespace Scientific_Calculator
             this.btnMod.Tag = "normalBtn";
             this.btnMod.Text = "mod";
             this.btnMod.UseVisualStyleBackColor = false;
+            this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
             this.btnMod.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.btnMod.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
@@ -981,7 +985,7 @@ namespace Scientific_Calculator
             this.btnExp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExp.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExp.ForeColor = System.Drawing.Color.White;
-            this.btnExp.Location = new System.Drawing.Point(244, 291);
+            this.btnExp.Location = new System.Drawing.Point(244, 264);
             this.btnExp.Margin = new System.Windows.Forms.Padding(2);
             this.btnExp.Name = "btnExp";
             this.btnExp.Size = new System.Drawing.Size(78, 45);
@@ -1038,28 +1042,6 @@ namespace Scientific_Calculator
             this.radioGrads.Text = "Grads";
             this.radioGrads.UseVisualStyleBackColor = false;
             // 
-            // btnTrigoDropdown
-            // 
-            this.btnTrigoDropdown.AutoSize = true;
-            this.btnTrigoDropdown.BackColor = System.Drawing.Color.Black;
-            this.btnTrigoDropdown.FlatAppearance.BorderSize = 0;
-            this.btnTrigoDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrigoDropdown.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrigoDropdown.ForeColor = System.Drawing.Color.White;
-            this.btnTrigoDropdown.Image = global::Scientific_Calculator.Properties.Resources.rsz_down;
-            this.btnTrigoDropdown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrigoDropdown.Location = new System.Drawing.Point(7, 210);
-            this.btnTrigoDropdown.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTrigoDropdown.Name = "btnTrigoDropdown";
-            this.btnTrigoDropdown.Size = new System.Drawing.Size(168, 31);
-            this.btnTrigoDropdown.TabIndex = 2;
-            this.btnTrigoDropdown.Tag = "";
-            this.btnTrigoDropdown.Text = "Trigonometry";
-            this.btnTrigoDropdown.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTrigoDropdown.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnTrigoDropdown.UseVisualStyleBackColor = false;
-            this.btnTrigoDropdown.Click += new System.EventHandler(this.btnTrigoDropdown_Click);
-            // 
             // btnPi
             // 
             this.btnPi.AutoSize = true;
@@ -1068,7 +1050,7 @@ namespace Scientific_Calculator
             this.btnPi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPi.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPi.ForeColor = System.Drawing.Color.White;
-            this.btnPi.Location = new System.Drawing.Point(84, 244);
+            this.btnPi.Location = new System.Drawing.Point(164, 311);
             this.btnPi.Margin = new System.Windows.Forms.Padding(2);
             this.btnPi.Name = "btnPi";
             this.btnPi.Size = new System.Drawing.Size(78, 45);
@@ -1080,92 +1062,35 @@ namespace Scientific_Calculator
             this.btnPi.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.btnPi.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
-            // btnFE
-            // 
-            this.btnFE.AutoSize = true;
-            this.btnFE.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnFE.FlatAppearance.BorderSize = 0;
-            this.btnFE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
-            this.btnFE.Location = new System.Drawing.Point(68, 140);
-            this.btnFE.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFE.Name = "btnFE";
-            this.btnFE.Size = new System.Drawing.Size(60, 30);
-            this.btnFE.TabIndex = 2;
-            this.btnFE.Tag = "ColorThisFormBackColor";
-            this.btnFE.Text = "F-E";
-            this.btnFE.UseVisualStyleBackColor = false;
-            this.btnFE.Click += new System.EventHandler(this.btnFE_Click);
-            // 
-            // btnModeDropdown
-            // 
-            this.btnModeDropdown.AutoSize = true;
-            this.btnModeDropdown.BackColor = System.Drawing.Color.Black;
-            this.btnModeDropdown.FlatAppearance.BorderSize = 0;
-            this.btnModeDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModeDropdown.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModeDropdown.ForeColor = System.Drawing.Color.White;
-            this.btnModeDropdown.Image = global::Scientific_Calculator.Properties.Resources.rsz_down;
-            this.btnModeDropdown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModeDropdown.Location = new System.Drawing.Point(179, 210);
-            this.btnModeDropdown.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModeDropdown.Name = "btnModeDropdown";
-            this.btnModeDropdown.Size = new System.Drawing.Size(109, 31);
-            this.btnModeDropdown.TabIndex = 5;
-            this.btnModeDropdown.Tag = "";
-            this.btnModeDropdown.Text = "Mode";
-            this.btnModeDropdown.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModeDropdown.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnModeDropdown.UseVisualStyleBackColor = false;
-            this.btnModeDropdown.Click += new System.EventHandler(this.btnModeDropdown_Click);
-            // 
             // panelDropDown2
             // 
             this.panelDropDown2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelDropDown2.Controls.Add(this.radioDegrees);
             this.panelDropDown2.Controls.Add(this.radioGrads);
             this.panelDropDown2.Controls.Add(this.radioRadians);
-            this.panelDropDown2.Location = new System.Drawing.Point(179, 242);
+            this.panelDropDown2.Location = new System.Drawing.Point(179, 215);
             this.panelDropDown2.Name = "panelDropDown2";
             this.panelDropDown2.Size = new System.Drawing.Size(116, 96);
             this.panelDropDown2.TabIndex = 6;
             this.panelDropDown2.Visible = false;
             // 
-            // button1
+            // btnRandom
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
-            this.button1.Location = new System.Drawing.Point(4, 140);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Tag = "ColorThisFormBackColor";
-            this.button1.Text = "RAD";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
-            this.button2.Location = new System.Drawing.Point(324, 174);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 30);
-            this.button2.TabIndex = 2;
-            this.button2.Tag = "ColorThisFormBackColor";
-            this.button2.Text = "M menu";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btnMsub_Click);
+            this.btnRandom.AutoSize = true;
+            this.btnRandom.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnRandom.FlatAppearance.BorderSize = 0;
+            this.btnRandom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRandom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRandom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
+            this.btnRandom.Location = new System.Drawing.Point(6, 147);
+            this.btnRandom.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRandom.Name = "btnRandom";
+            this.btnRandom.Size = new System.Drawing.Size(60, 30);
+            this.btnRandom.TabIndex = 2;
+            this.btnRandom.Tag = "ColorThisFormBackColor";
+            this.btnRandom.Text = "RND";
+            this.btnRandom.UseVisualStyleBackColor = false;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
             // labelCalcuMode
             // 
@@ -1187,36 +1112,17 @@ namespace Scientific_Calculator
             this.panelDropDown1.Controls.Add(this.btnCos);
             this.panelDropDown1.Controls.Add(this.btnSinh);
             this.panelDropDown1.Controls.Add(this.btnTan);
-            this.panelDropDown1.Location = new System.Drawing.Point(7, 241);
+            this.panelDropDown1.Location = new System.Drawing.Point(7, 214);
             this.panelDropDown1.Name = "panelDropDown1";
             this.panelDropDown1.Size = new System.Drawing.Size(196, 93);
             this.panelDropDown1.TabIndex = 8;
             this.panelDropDown1.Visible = false;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.AutoSize = true;
-            this.btnMenu.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Location = new System.Drawing.Point(4, 4);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(39, 43);
-            this.btnMenu.TabIndex = 2;
-            this.btnMenu.Tag = "ColorThisFormBackColor";
-            this.btnMenu.Text = "≡";
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // panelSlidingMenu
             // 
             this.panelSlidingMenu.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panelSlidingMenu.Controls.Add(this.label2);
             this.panelSlidingMenu.Controls.Add(this.label1);
-            this.panelSlidingMenu.Controls.Add(this.btnMenu12);
             this.panelSlidingMenu.Controls.Add(this.btnMenu11);
             this.panelSlidingMenu.Controls.Add(this.btnMenu10);
             this.panelSlidingMenu.Controls.Add(this.btnMenu9);
@@ -1229,10 +1135,10 @@ namespace Scientific_Calculator
             this.panelSlidingMenu.Controls.Add(this.btnMenu2);
             this.panelSlidingMenu.Controls.Add(this.btnMenu1);
             this.panelSlidingMenu.Location = new System.Drawing.Point(4, 47);
-            this.panelSlidingMenu.MaximumSize = new System.Drawing.Size(228, 524);
-            this.panelSlidingMenu.MinimumSize = new System.Drawing.Size(0, 524);
+            this.panelSlidingMenu.MaximumSize = new System.Drawing.Size(228, 500);
+            this.panelSlidingMenu.MinimumSize = new System.Drawing.Size(0, 500);
             this.panelSlidingMenu.Name = "panelSlidingMenu";
-            this.panelSlidingMenu.Size = new System.Drawing.Size(0, 524);
+            this.panelSlidingMenu.Size = new System.Drawing.Size(0, 500);
             this.panelSlidingMenu.TabIndex = 9;
             // 
             // label2
@@ -1256,21 +1162,6 @@ namespace Scientific_Calculator
             this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Calculator";
-            // 
-            // btnMenu12
-            // 
-            this.btnMenu12.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnMenu12.FlatAppearance.BorderSize = 0;
-            this.btnMenu12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu12.ForeColor = System.Drawing.Color.White;
-            this.btnMenu12.Location = new System.Drawing.Point(0, 483);
-            this.btnMenu12.Name = "btnMenu12";
-            this.btnMenu12.Size = new System.Drawing.Size(228, 38);
-            this.btnMenu12.TabIndex = 0;
-            this.btnMenu12.Text = "       About";
-            this.btnMenu12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu12.UseVisualStyleBackColor = false;
             // 
             // btnMenu11
             // 
@@ -1455,12 +1346,74 @@ namespace Scientific_Calculator
             this.labelEquation.Size = new System.Drawing.Size(20, 56);
             this.labelEquation.TabIndex = 10;
             // 
+            // btnModeDropdown
+            // 
+            this.btnModeDropdown.AutoSize = true;
+            this.btnModeDropdown.BackColor = System.Drawing.Color.Black;
+            this.btnModeDropdown.FlatAppearance.BorderSize = 0;
+            this.btnModeDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModeDropdown.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModeDropdown.ForeColor = System.Drawing.Color.White;
+            this.btnModeDropdown.Image = global::Scientific_Calculator.Properties.Resources.rsz_down;
+            this.btnModeDropdown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModeDropdown.Location = new System.Drawing.Point(179, 183);
+            this.btnModeDropdown.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModeDropdown.Name = "btnModeDropdown";
+            this.btnModeDropdown.Size = new System.Drawing.Size(109, 31);
+            this.btnModeDropdown.TabIndex = 5;
+            this.btnModeDropdown.Tag = "";
+            this.btnModeDropdown.Text = "Mode";
+            this.btnModeDropdown.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModeDropdown.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnModeDropdown.UseVisualStyleBackColor = false;
+            this.btnModeDropdown.Click += new System.EventHandler(this.btnModeDropdown_Click);
+            // 
+            // btnTrigoDropdown
+            // 
+            this.btnTrigoDropdown.AutoSize = true;
+            this.btnTrigoDropdown.BackColor = System.Drawing.Color.Black;
+            this.btnTrigoDropdown.FlatAppearance.BorderSize = 0;
+            this.btnTrigoDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrigoDropdown.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrigoDropdown.ForeColor = System.Drawing.Color.White;
+            this.btnTrigoDropdown.Image = global::Scientific_Calculator.Properties.Resources.rsz_down;
+            this.btnTrigoDropdown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTrigoDropdown.Location = new System.Drawing.Point(7, 183);
+            this.btnTrigoDropdown.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTrigoDropdown.Name = "btnTrigoDropdown";
+            this.btnTrigoDropdown.Size = new System.Drawing.Size(168, 31);
+            this.btnTrigoDropdown.TabIndex = 2;
+            this.btnTrigoDropdown.Tag = "";
+            this.btnTrigoDropdown.Text = "Trigonometry";
+            this.btnTrigoDropdown.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTrigoDropdown.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnTrigoDropdown.UseVisualStyleBackColor = false;
+            this.btnTrigoDropdown.Click += new System.EventHandler(this.btnTrigoDropdown_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.AutoSize = true;
+            this.btnMenu.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(4, 4);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(39, 43);
+            this.btnMenu.TabIndex = 2;
+            this.btnMenu.Tag = "ColorThisFormBackColor";
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // sciCal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(406, 573);
+            this.ClientSize = new System.Drawing.Size(406, 547);
             this.Controls.Add(this.labelEquation);
             this.Controls.Add(this.panelSlidingMenu);
             this.Controls.Add(this.panelDropDown2);
@@ -1488,10 +1441,8 @@ namespace Scientific_Calculator
             this.Controls.Add(this.btnSign);
             this.Controls.Add(this.btnBackspace);
             this.Controls.Add(this.btn9);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnMsub);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnFE);
+            this.Controls.Add(this.btnRandom);
             this.Controls.Add(this.btnPi);
             this.Controls.Add(this.btnMC);
             this.Controls.Add(this.btnMenu);
@@ -1504,8 +1455,8 @@ namespace Scientific_Calculator
             this.Controls.Add(this.btnExpToY);
             this.Controls.Add(this.btnFactorial);
             this.Controls.Add(this.btnSquared);
-            this.Controls.Add(this.btnRightParen);
-            this.Controls.Add(this.btnLeftParen);
+            this.Controls.Add(this.btnFtoE);
+            this.Controls.Add(this.btnE);
             this.Controls.Add(this.btnMadd);
             this.Controls.Add(this.btnMS);
             this.Controls.Add(this.displayTxtBox);
@@ -1563,8 +1514,8 @@ namespace Scientific_Calculator
         private System.Windows.Forms.Button btn7;
         private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Button btn1;
-        private System.Windows.Forms.Button btnLeftParen;
-        private System.Windows.Forms.Button btnRightParen;
+        private System.Windows.Forms.Button btnE;
+        private System.Windows.Forms.Button btnFtoE;
         private System.Windows.Forms.Button btnLn;
         private System.Windows.Forms.Button btnSquared;
         private System.Windows.Forms.Button btnFactorial;
@@ -1586,16 +1537,13 @@ namespace Scientific_Calculator
         private System.Windows.Forms.RadioButton radioGrads;
         private System.Windows.Forms.Button btnTrigoDropdown;
         private System.Windows.Forms.Button btnPi;
-        private System.Windows.Forms.Button btnFE;
         private System.Windows.Forms.Button btnModeDropdown;
         private System.Windows.Forms.Panel panelDropDown2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRandom;
         private System.Windows.Forms.Label labelCalcuMode;
         private System.Windows.Forms.Panel panelDropDown1;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Panel panelSlidingMenu;
-        private System.Windows.Forms.Button btnMenu12;
         private System.Windows.Forms.Button btnMenu11;
         private System.Windows.Forms.Button btnMenu10;
         private System.Windows.Forms.Button btnMenu9;

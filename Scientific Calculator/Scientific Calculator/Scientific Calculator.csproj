@@ -92,5 +92,14 @@
   <ItemGroup>
     <None Include="Properties\rsz_up.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\rsz_1rsz_cancel.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
