@@ -705,6 +705,7 @@ namespace Scientific_Calculator
             this.btnLn.Tag = "normalBtn";
             this.btnLn.Text = "ln";
             this.btnLn.UseVisualStyleBackColor = false;
+            this.btnLn.Click += new System.EventHandler(this.btnLn_Click);
             this.btnLn.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.btnLn.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 

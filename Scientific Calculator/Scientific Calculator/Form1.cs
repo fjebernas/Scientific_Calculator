@@ -26,6 +26,8 @@ namespace Scientific_Calculator
         bool isFinished = false;
         bool isDoingAnother = false;
         bool isDoingXraisedtoY = false;
+        bool isDoingXrootofY = false;
+        bool isDoingCustomlog = false;
         bool isFirstset = true;
 
         double firstOperand;
@@ -44,7 +46,8 @@ namespace Scientific_Calculator
         {
             this.ActiveControl = btnEquals;
             this.BackColor = formBackColor;
-
+            this.Opacity = 0.97;
+            
             panelSlidingMenu.BackColor = formBackColor;
             List<Button> MenuButtons = new List<Button> {
             btnMenu1, btnMenu2, btnMenu3, btnMenu4, btnMenu5, btnMenu6, btnMenu7, btnMenu8, btnMenu9, btnMenu10, btnMenu11, btnMenu12 };
@@ -115,14 +118,30 @@ namespace Scientific_Calculator
 
         private void btnSquared_Click(object sender, EventArgs e)
         {
-            displayTxtBox.Text = Convert.ToString(Convert.ToDouble(displayTxtBox.Text) * Convert.ToDouble(displayTxtBox.Text));
+            if (isFirstset)
+            {
+                displayTxtBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(displayTxtBox.Text), 2));
+            } 
+            else if (!isFirstset)
+            {
+                displayTxtBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(displayTxtBox.Text), 3));
+            }
         }
 
         private void btnExpToY_Click(object sender, EventArgs e)
         {
             OperationSetter();
-            theOperator = "x raised to y";
-            isDoingXraisedtoY = true;
+
+            if (isFirstset)
+            {
+                theOperator = "x raised to y";
+                isDoingXraisedtoY = true;
+            } 
+            else if (!isFirstset)
+            {
+                theOperator = "x root y";
+                isDoingXrootofY = true;
+            }
         }
 
         private void btnCubed_Click(object sender, EventArgs e)
@@ -259,6 +278,16 @@ namespace Scientific_Calculator
                     labelEquation.Text = Convert.ToString(firstOperand) + " raised to " + Convert.ToString(secondOperand) + " is";
                     isDoingXraisedtoY = false;
                 } 
+                else if (isDoingXrootofY)
+                {
+                    labelEquation.Text = Convert.ToString(secondOperand) + " root of " + Convert.ToString(firstOperand) + " is";
+                    isDoingXrootofY = false;
+                }
+                else if (isDoingCustomlog)
+                {
+                    labelEquation.Text = Convert.ToString(firstOperand) + " log base " + Convert.ToString(secondOperand) + " =";
+                    isDoingXrootofY = false;
+                }
                 else
                 {
                     labelEquation.Text = labelEquation.Text + Convert.ToString(secondOperand) + " =";
@@ -289,6 +318,16 @@ namespace Scientific_Calculator
 
                     case "x raised to y":
                         result = Math.Pow(firstOperand, secondOperand);
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
+
+                    case "x root y":
+                        result = Math.Pow(firstOperand, 1/secondOperand);
+                        displayTxtBox.Text = Convert.ToString(result);
+                        break;
+
+                    case "x log base y":
+                        result = Math.Log(firstOperand, secondOperand);
                         displayTxtBox.Text = Convert.ToString(result);
                         break;
 
@@ -478,7 +517,15 @@ namespace Scientific_Calculator
 
         private void btnRadical_Click(object sender, EventArgs e)
         {
-            displayTxtBox.Text = Convert.ToString(Math.Sqrt(Convert.ToDouble(displayTxtBox.Text)));
+            if (isFirstset)
+            {
+                displayTxtBox.Text = Convert.ToString(Math.Sqrt(Convert.ToDouble(displayTxtBox.Text)));
+            } 
+            else if (!isFirstset)
+            {
+                displayTxtBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(displayTxtBox.Text), 0.3333333333333333));
+            }
+            
         }
 
         private void btnFactorial_Click(object sender, EventArgs e)
@@ -545,12 +592,30 @@ namespace Scientific_Calculator
 
         private void btnLog_Click(object sender, EventArgs e)
         {
-            displayTxtBox.Text = Convert.ToString(Math.Log10(Convert.ToDouble(displayTxtBox.Text)));
+            if (isFirstset)
+            {
+                displayTxtBox.Text = Convert.ToString(Math.Log10(Convert.ToDouble(displayTxtBox.Text)));
+            } 
+            else if (!isFirstset)
+            {
+                OperationSetter();
+                theOperator = "x log base y";
+                isDoingCustomlog = true;
+            }
+            
         }
 
         private void btnTenRaisedToX_Click(object sender, EventArgs e)
         {
-            displayTxtBox.Text = Convert.ToString(Math.Pow(10, Convert.ToDouble(displayTxtBox.Text)));
+            if (isFirstset)
+            {
+                displayTxtBox.Text = Convert.ToString(Math.Pow(10, Convert.ToDouble(displayTxtBox.Text)));
+            } 
+            else if (!isFirstset)
+            {
+                displayTxtBox.Text = Convert.ToString(Math.Pow(2, Convert.ToDouble(displayTxtBox.Text)));
+            }
+            
         }
 
         private void btnExp_Click(object sender, EventArgs e)
@@ -589,6 +654,19 @@ namespace Scientific_Calculator
                 isFirstset = true;
             }
            
+        }
+
+        private void btnLn_Click(object sender, EventArgs e)
+        {
+            if (isFirstset)
+            {
+                displayTxtBox.Text = Convert.ToString(Math.Log(Convert.ToDouble(displayTxtBox.Text), Math.E));
+            } 
+            else if (!isFirstset)
+            {
+                displayTxtBox.Text = Convert.ToString(Math.Pow(Math.E, Convert.ToDouble(displayTxtBox.Text)));
+            }
+            
         }
     }
 }
