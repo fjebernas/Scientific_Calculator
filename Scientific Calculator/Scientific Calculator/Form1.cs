@@ -13,7 +13,7 @@ namespace Scientific_Calculator
 {
     public partial class sciCal : Form
     {
-        Image menuImage = Properties.Resources.menu;
+        Image menuImage = Properties.Resources.face;
         Image cancelImage = Properties.Resources.cancel;
         
 
@@ -54,13 +54,13 @@ namespace Scientific_Calculator
             this.Opacity = 0.97;
             
             panelSlidingMenu.BackColor = formBackColor;
-            List<Button> MenuButtons = new List<Button> {
-            btnMenu1, btnMenu2, btnMenu3, btnMenu4, btnMenu5, btnMenu6, btnMenu7, btnMenu8, btnMenu9, btnMenu10, btnMenu11};
+            //List<Button> MenuButtons = new List<Button> {
+            //btnMenu1, btnMenu2, btnMenu3, btnMenu4, btnMenu5, btnMenu6, btnMenu7, btnMenu8, btnMenu9, btnMenu10, btnMenu11};
 
-            foreach (Button x in MenuButtons)
-            {
-                x.BackColor = formBackColor;
-            }
+            //foreach (Button x in MenuButtons)
+            //{
+            //    x.BackColor = formBackColor;
+            //}
 
 
             panelDropDown2.BackColor = normalButtonsColor;
@@ -85,8 +85,6 @@ namespace Scientific_Calculator
                     x.BackColor = normalButtonsColor;
                 }
             }
-
-            this.ShowIcon = false;
         }
        
         private void btnCE_Click(object sender, EventArgs e)
@@ -124,13 +122,19 @@ namespace Scientific_Calculator
 
         private void btnSquared_Click(object sender, EventArgs e)
         {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+
             if (isFirstset)
             {
                 displayTxtBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(displayTxtBox.Text), 2));
+
+                labelEquation.Text = "sqr(" + num.ToString() + ") =";
             } 
             else if (!isFirstset)
             {
                 displayTxtBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(displayTxtBox.Text), 3));
+
+                labelEquation.Text = "cube(" + num.ToString() + ") =";
             }
         }
 
@@ -158,6 +162,13 @@ namespace Scientific_Calculator
         private void btnMS_Click(object sender, EventArgs e)
         {
             memoryNumber = Convert.ToDouble(displayTxtBox.Text);
+
+            labelMemoryIndicator.Visible = true;
+
+            btnMC.Enabled = true;
+            btnMR.Enabled = true;
+            btnMadd.Enabled = true;
+            btnMsub.Enabled = true;
         }
 
         private void btnMR_Click(object sender, EventArgs e)
@@ -168,6 +179,13 @@ namespace Scientific_Calculator
         private void btnMC_Click(object sender, EventArgs e)
         {
             memoryNumber = 0;
+
+            labelMemoryIndicator.Visible = false;
+
+            btnMC.Enabled = false;
+            btnMR.Enabled = false;
+            btnMadd.Enabled = false;
+            btnMsub.Enabled = false;
         }
 
         private void btnMadd_Click(object sender, EventArgs e)
@@ -322,7 +340,7 @@ namespace Scientific_Calculator
                         displayTxtBox.Text = Convert.ToString(result);
                         break;
 
-                    case "/":
+                    case "÷":
                         result = firstOperand / secondOperand;
                         displayTxtBox.Text = Convert.ToString(result);
                         break;
@@ -364,27 +382,43 @@ namespace Scientific_Calculator
 
         private void btnSin_Click(object sender, EventArgs e)
         {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+
             double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
             displayTxtBox.Text = Math.Sin(degrees).ToString("N5");
+
+            labelEquation.Text = "sin(" + num.ToString() + "°) =";
         }
 
         private void btnCos_Click(object sender, EventArgs e)
         {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+
             double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
             displayTxtBox.Text = Math.Cos(degrees).ToString("N5");
+
+            labelEquation.Text = "cos(" + num.ToString() + "°) =";
         }
 
         private void btnAbs_Click(object sender, EventArgs e)
         {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+
             double absValue = Convert.ToDouble(displayTxtBox.Text);
             absValue = Math.Abs(absValue);
             displayTxtBox.Text = Convert.ToString(absValue);
+
+            labelEquation.Text = "abs(" + num.ToString() + ") =";
         }
 
         private void btnTan_Click(object sender, EventArgs e)
         {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+
             double degrees = (Convert.ToDouble(displayTxtBox.Text) * Math.PI) / 180;
             displayTxtBox.Text = Math.Tan(degrees).ToString("N5");
+
+            labelEquation.Text = "tan(" + num.ToString() + "°) =";
         }
 
         //drop down panel functions
@@ -530,26 +564,38 @@ namespace Scientific_Calculator
 
         private void btnOneOverX_Click(object sender, EventArgs e)
         {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+
             displayTxtBox.Text = Convert.ToString(1 / Convert.ToDouble(displayTxtBox.Text));
+
+            labelEquation.Text = "1 / (" + num.ToString() + ") =";
         }
 
         private void btnRadical_Click(object sender, EventArgs e)
         {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+
             if (isFirstset)
             {
                 displayTxtBox.Text = Convert.ToString(Math.Sqrt(Convert.ToDouble(displayTxtBox.Text)));
+
+                labelEquation.Text = "sqrt(" + num.ToString() + ") =";
             } 
             else if (!isFirstset)
             {
                 displayTxtBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(displayTxtBox.Text), 0.3333333333333333));
+
+                labelEquation.Text = "cuberoot(" + num.ToString() + ") =";
             }
             
         }
 
         private void btnFactorial_Click(object sender, EventArgs e)
         {
-            if (!displayTxtBox.Text.Contains("."))
+            if (!displayTxtBox.Text.Contains(".") )
             {
+                labelEquation.Text = "fact(" + displayTxtBox.Text + ") =";
+
                 double result = 1;
 
                 for (double i = Convert.ToDouble(displayTxtBox.Text); i != 1; i--)
@@ -558,6 +604,10 @@ namespace Scientific_Calculator
                 }
 
                 displayTxtBox.Text = Convert.ToString(result);
+            }
+            else if (displayTxtBox.Text == "0")
+            {
+                displayTxtBox.Text = "1";
             }
             else
             {
@@ -584,8 +634,8 @@ namespace Scientific_Calculator
             } 
             else if (button.Tag == "equals")
             {
-                button.BackColor = ColorTranslator.FromHtml("#FFFFFF");
-                button.Font = new Font(button.Font.FontFamily, 17);
+                button.BackColor = ColorTranslator.FromHtml("#1D2046");
+                button.Font = new Font(button.Font.FontFamily, 20);
             }
         }
 
@@ -603,16 +653,20 @@ namespace Scientific_Calculator
             }
             else if (button.Tag == "equals")
             {
-                button.BackColor = ColorTranslator.FromHtml("#D1C6BA");
-                button.Font = new Font(button.Font.FontFamily, 13);
+                button.BackColor = Color.FromArgb(19, 21, 45);
+                button.Font = new Font(button.Font.FontFamily, 15);
             }
         }
 
         private void btnLog_Click(object sender, EventArgs e)
         {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+
             if (isFirstset)
             {
                 displayTxtBox.Text = Convert.ToString(Math.Log10(Convert.ToDouble(displayTxtBox.Text)));
+
+                labelEquation.Text = "log(" + num.ToString() + ") =";
             } 
             else if (!isFirstset)
             {
@@ -625,19 +679,27 @@ namespace Scientific_Calculator
 
         private void btnTenRaisedToX_Click(object sender, EventArgs e)
         {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+
             if (isFirstset)
             {
                 displayTxtBox.Text = Convert.ToString(Math.Pow(10, Convert.ToDouble(displayTxtBox.Text)));
+
+                labelEquation.Text = "10 ^ (" + num.ToString() + ") =";
             } 
             else if (!isFirstset)
             {
                 displayTxtBox.Text = Convert.ToString(Math.Pow(2, Convert.ToDouble(displayTxtBox.Text)));
+
+                labelEquation.Text = "2 ^ (" + num.ToString() + ") =";
             }
             
         }
 
         private void btnExp_Click(object sender, EventArgs e)
         {
+            labelEquation.Text = "e ^ (" + displayTxtBox.Text + ") =";
+
             displayTxtBox.Text = Convert.ToString(Math.Exp(Convert.ToDouble(displayTxtBox.Text)));
         }
 
@@ -676,13 +738,19 @@ namespace Scientific_Calculator
 
         private void btnLn_Click(object sender, EventArgs e)
         {
+            double num = Convert.ToDouble(displayTxtBox.Text);
+
             if (isFirstset)
             {
                 displayTxtBox.Text = Convert.ToString(Math.Log(Convert.ToDouble(displayTxtBox.Text), Math.E));
+
+                labelEquation.Text = "ln(" + num.ToString() + ") =";
             } 
             else if (!isFirstset)
             {
                 displayTxtBox.Text = Convert.ToString(Math.Pow(Math.E, Convert.ToDouble(displayTxtBox.Text)));
+
+                labelEquation.Text = "e ^ (" + num.ToString() + ") =";
             }
             
         }
@@ -696,16 +764,19 @@ namespace Scientific_Calculator
 
         private void btnSinh_Click(object sender, EventArgs e)
         {
+            labelEquation.Text = "sinh(" + displayTxtBox.Text + "°) =";
             displayTxtBox.Text = Math.Sinh(Convert.ToDouble(displayTxtBox.Text)).ToString();
         }
 
         private void btnCosh_Click(object sender, EventArgs e)
         {
+            labelEquation.Text = "cosh(" + displayTxtBox.Text + "°) =";
             displayTxtBox.Text = Math.Cosh(Convert.ToDouble(displayTxtBox.Text)).ToString();
         }
 
         private void btnTanh_Click(object sender, EventArgs e)
         {
+            labelEquation.Text = "tanh(" + displayTxtBox.Text + "°) =";
             displayTxtBox.Text = Math.Tanh(Convert.ToDouble(displayTxtBox.Text)).ToString();
         }
 

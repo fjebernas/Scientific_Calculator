@@ -101,5 +101,8 @@
   <ItemGroup>
     <None Include="assets\rsz_1rsz_cancel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\face.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
